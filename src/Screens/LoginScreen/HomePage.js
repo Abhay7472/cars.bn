@@ -83,25 +83,22 @@ const HomePage = ({ navigation }) => {
         )
     }
 
-const showAlert=()=>{ 
-    Alert.alert('Welcome', 'please SignIn or Register as CUSTOMER AND DELAR', [
-        {
-            text: 'Skip',
-            onPress: () => {
-                console.log('Skiped');
+    const showAlert = () => {
+        Alert.alert('Welcome', 'please SignIn or Register as CUSTOMER AND DELAR', [
+            {
+                text: 'Skip',
+                onPress: () => {
+                    console.log('Skiped');
+                },
             },
-        },
-        {
-            text: 'Proceed',
-            onPress: () => {
-                navigation.navigate('UserLoginScreen');
+            {
+                text: 'Proceed',
+                onPress: () => {
+                    navigation.navigate('UserLoginScreen');
+                },
             },
-        },
-    ]);}
-   
-
-
-
+        ]);
+    }
 
     const RowButton = () => {
         return (

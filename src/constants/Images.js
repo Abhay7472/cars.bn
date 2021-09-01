@@ -13,6 +13,10 @@ const images = {
   PostImage: require('../assets/PostImage.jpg'),
   carBannerDesign: require('../assets/carBannerDesign.jpg'),
    cardImage: require('../assets/cardImage.png'),
+   carSeat: require('../assets/carSeat.png'),
+   exterior: require('../assets/exterior.png'),
+   inspectionCar: require('../assets/inspectionCar.png'),
+   roadtest: require('../assets/roadtest.png'),
 
 
 }

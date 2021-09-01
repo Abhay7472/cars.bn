@@ -15,7 +15,7 @@ const CreatePost2 = ({ navigation }) => {
         return (
             <View>
                 <TouchableOpacity onPress={() => { }} style={[styles.card, { justifyContent: 'space-between', flexDirection: 'row' }]}>
-                    <Image source={images.cardImage} style={{ height: 50, width: 100,resizeMode:'stretch' }} />
+                    <Image source={images.cardImage} style={{ height: 50, width: 100, resizeMode: 'stretch' }} />
                     <Text style={styles.bigBlueText}
                         style={{ paddingRight: 90, color: "#213884", fontSize: 15 }}>Post Submitted to Admin!</Text>
                 </TouchableOpacity>
@@ -23,7 +23,7 @@ const CreatePost2 = ({ navigation }) => {
         )
     }
     return (
-       //  <ScrollView>
+        //  <ScrollView>
         <View>
             <View style={{ flexDirection: 'row' }}>
                 <Image source={images.union} style={styles.img}></Image>
@@ -34,7 +34,7 @@ const CreatePost2 = ({ navigation }) => {
                     style={{ marginLeft: "55%", paddingTop: 15, color: "#213884" }}
                 />
             </View>
-            <Image source={images.carBannerDesign} style={styles.backImage} resizeMode='stretch'/>
+            <Image source={images.carBannerDesign} style={styles.backImage} resizeMode='stretch' />
 
             <View >
                 <Text style={{ paddingTop: 30, paddingLeft: 15, fontSize: 20 }}>My Auction</Text>
@@ -56,7 +56,7 @@ const CreatePost2 = ({ navigation }) => {
                 <DropDown />
             </View>
         </View>
-      // </ScrollView>
+        // </ScrollView>
 
     )
 }
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     backImage: {
-       
-        width:'90%',
+
+        width: '90%',
         height: '30%',
         marginTop: 30,
         alignSelf: 'center',
@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.9,
         shadowRadius: 10,
-        borderRadius:20,
-        
+        borderRadius: 20,
+
     },
 
     card: {

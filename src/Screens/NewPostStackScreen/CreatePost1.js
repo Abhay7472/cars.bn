@@ -49,17 +49,7 @@ const CreatePost1 = (props,{navigation}) => {
                         style={styles.input}
                         autoCapitalize="none"
                     />
-                </View>
-                {/* <View style={styles.headerWrapper}>
-                    <Text style={{ color: "#213884", fontSize: 20 }}> Registration Number </Text>
-                    <TextInput 
-                        placeholder="password"
-                        placeholderTextColor = "#666"
-                        style={styles.input}
-                        autoCapitalize="none"
-                        onChangeText={(val) => handlepasswordCheckChange(val)}
-                    />
-                </View> */}
+                </View>             
                 <View style={styles.headerWrapper}>
                     <Text style={{ color: "#213884", fontSize: 20 }}> Current Message </Text>
                     <TextInput 
