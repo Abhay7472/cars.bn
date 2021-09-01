@@ -8,8 +8,7 @@ import Colors from '../constants/Colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ExploreScreen from '../Screens/TabScreens/ExploreScreen'
 import Notification from '../Screens/TabScreens/Notification';
-import Sell from '../Screens/TabScreens/Sell';
-import Auction from '../Screens/TabScreens/Auction';
+ import Auction from '../Screens/TabScreens/Auction';
 import Home1 from '../Screens/TabScreens/Home1';
 import Saved from '../Screens/TabScreens/Saved';
 
@@ -49,20 +48,7 @@ const MainTabScreen = () => (
         ),
       }}
     />
-    <Tab.Screen
-      name="SELL"
-      component={Sell}
-      options={{
-        tabBarLabel: 'SELL',
-        tabBarColor: '#0000cd',
-        tabBarIcon: ({ color }) => (
-          <Icon name="car-sport-outline" color={color} size={26} />
-        ),
-      }}
-    />
-
-
-    <Tab.Screen
+        <Tab.Screen
       name="Notification"
       component={Notification}
       options={{

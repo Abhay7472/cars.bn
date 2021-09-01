@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView, FlatList } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import colors from './constants/Colors';
-import { Card } from 'react-native-elements/dist/card/Card';
-import { SliderBox } from "react-native-image-slider-box";
+import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import images from './constants/Images';
 
 const MyPostDesign = () => {
 
-    const Renderitems1 = () => {
+    const data1 = [
+        { title: '2018 Toyota C HR 1.8', paragraph: 'Automatic | 4Seater | Sadan', body: 'Lodon Ispum is simple domy Text' },
+        { title: "BMW", paragraph: '4250 km | Automatic', body: '25000$' }]
+
+    const Renderitems1 = ({ item }) => {
         return (
 
             <View style={styles.outerbox}>
-                <Image style={styles.image} source={images.car} />
+               
+                <Icon
+                    name='more-vert'
+                    size={30}
+                    color='white'
+                    style={{ alignSelf: 'flex-end',position:'absolute',zIndex:1}}
+                    onPress={()=>alert('changes')}
+                />
+                <Image style={styles.image} source={images.cardImage}>
+                </Image>
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>Ford Mustang-2014</Text>
                     <Text style={styles.paragraph}> 4250km | Automatic</Text>
@@ -24,6 +33,8 @@ const MyPostDesign = () => {
         )
     }
 
+
+
     return (
         <ScrollView>
             <View>
@@ -31,16 +42,15 @@ const MyPostDesign = () => {
                     <Image source={images.union} style={styles.img}></Image>
                     <Text style={styles.text}>My post</Text>
                 </View>
-
                 <Text style={[styles.text, { color: 'yellow', fontWeight: 'bold' }]}>Request Panding</Text>
                 <Renderitems1 />
-
                 <Text style={[styles.text, { color: 'green', fontWeight: 'bold' }]}>Approved</Text>
-                <Renderitems1 />
-
+                <View style={{ flexDirection: 'row' }}>
+                    <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1} keyExtractor={item => item.title} />
+                </View>
                 <Text style={[styles.text, { color: 'red', fontWeight: 'bold' }]}>Rejected</Text>
                 <Renderitems1 />
-                
+
             </View>
         </ScrollView>
     )
@@ -60,7 +70,7 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     outerbox: {
-        width: Dimensions.get('screen').width / 3 * 2,
+        width: Dimensions.get('screen').width / 4 * 2,
         borderWidth: 1,
         borderRadius: 20,
         borderColor: '#ddd',
@@ -71,17 +81,19 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.9,
         shadowRadius: 10,
         marginHorizontal: 10,
-        marginTop: 20
+        marginTop: 20,
+        flex:2
     },
     image: {
-        height: 150,
+        height: 100,
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        //resizeMode: 'stretch'
+        flex:1
     },
     innerbox: {
         padding: 10,
+        flex:1
     },
     title: {
         color: 'black',

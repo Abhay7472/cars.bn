@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerContent } from './navigation/DrawerContent';
-import MainTabScreen from './navigation/MainTabScreen'; 
+import MainTabScreen from './navigation/MainTabScreen';
 import RootStackScreen from './Screens/LoginScreen/RootStackScreen';
 import AsyncStorage from '@react-native-community/async-storage';
-// import MyPost from './Screens/DrawerScreen/MyPost';
+import NewPostStackSrcreen from './Screens/NewPostStackScreen/CreatePost1'
+
+import MyPost from './Screens/DrawerScreen/MyPost';
+import RequestStatus from './Screens/DrawerScreen/RequestStatus';
+import TermCondition from './Screens/DrawerScreen/TermCondition';
+import PrivacyPolicy from './Screens/DrawerScreen/PrivacyPolicy';
 
 import { AuthContext } from './model/context';
 
@@ -114,10 +119,13 @@ const App = () => {
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {loginState.userToken !== null ? (
-          <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+          <Drawer.Navigator drawerContent={props => <DrawerContent {...props}/>}>
             <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
-            {/* <Drawer.Screen name="MyPost" component={MyPost}/> */}
-
+            <Drawer.Screen name="MyPost" component={MyPost} />
+            <Drawer.Screen name="NewPostStackSrcreen" component={NewPostStackSrcreen} />
+            <Drawer.Screen name="RequestStatus" component={RequestStatus} />
+            <Drawer.Screen name="TermCondition" component={TermCondition}  options={{ headerShown: false }}/>
+            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy}  options={{ headerShown: false }}/>
           </Drawer.Navigator>
         )
           :

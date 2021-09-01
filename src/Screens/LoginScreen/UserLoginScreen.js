@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, StatusBar } from 'react-native'
-import Button from '../../components/button'
+import Button from '../../components/Button'
 import Colors from '../../constants/Colors'
 import images from '../../constants/Images'
 
@@ -22,7 +22,7 @@ export default function UserLoginScreen({ navigation }) {
                         <Text style={{ color: Colors.PrimaryBlue, fontSize: 16 }}>CUSTOMER</Text>
                     </Button>
 
-                    <Button style={style.button} onPress={() => navigation.navigate('SignInScreen')}>
+                    <Button style={style.button} onPress={() => navigation.navigate('RagistrationDealerScreen')}>
                         <Text style={{ color: Colors.PrimaryBlue, fontSize: 16 }}>DEALER</Text>
                     </Button>
                 </View>

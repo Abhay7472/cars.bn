@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import CreatePost1 from './CreatePost1';
 import CreatePost2 from './CreatePost2';
-import CreatePost3 from './CreatePost3';
+import CreatePost3 from '../../CreatePost3';
 import SuccessfullPostCreated from './SuccessfullPostCreated';
 
 const NewPostStack = createStackNavigator();

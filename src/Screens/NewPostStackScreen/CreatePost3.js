@@ -4,9 +4,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { RadioButton } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 
-import colors from './constants/Colors';
-import images from './constants/Images';
-import button from './components/button';
+import colors from '../../constants/Colors';
+import images from '../../constants/Images';
+import Button from '../../components/Button';
 
 
 

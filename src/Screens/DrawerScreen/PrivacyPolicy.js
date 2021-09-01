@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import colors from './constants/Colors';
-import images from './constants/Images';
+import colors from '../../constants/Colors';
+import images from '../../constants/Images';
 
 const PrivacyPolicy = () => {
 

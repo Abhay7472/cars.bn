@@ -9,6 +9,7 @@ import SignUpScreen from './SignUpScreen';
 import UserLoginScreen from './UserLoginScreen';
 import RegistrationScreen from './RegistrationScreen'
 import SocialLoginScreen from './SocialLoginScreen'
+import RagistrationDealerScreen from './RagistrationDealerScreen'
  
  
 
@@ -25,6 +26,7 @@ const RootStackScreen = ({navigation}) => (
           <RootStack.Screen name="UserLoginScreen" component={UserLoginScreen}/>                                 
           <RootStack.Screen name="SocialLoginScreen" component={SocialLoginScreen}/>                                 
           <RootStack.Screen name="RegistrationScreen" component={RegistrationScreen}/>                       
+          <RootStack.Screen name="RagistrationDealerScreen" component={RagistrationDealerScreen}/>                       
         <RootStack.Screen name="SignInScreen" component={SignInScreen}/>
         <RootStack.Screen name="SignUpScreen" component={SignUpScreen}/>
     </RootStack.Navigator>
