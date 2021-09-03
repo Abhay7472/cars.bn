@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import colors from '../../constants/Colors';
 
-import images from './constants/Images';
+import images from '../../constants/Images';
 
-const MyPostDesign = () => {
+const MyPostDesign = ({navigation:{goBack}}) => {
 
     const data1 = [
         { title: '2018 Toyota C HR 1.8', paragraph: 'Automatic | 4Seater | Sadan', body: 'Lodon Ispum is simple domy Text' },
@@ -20,7 +21,7 @@ const MyPostDesign = () => {
                     size={30}
                     color='white'
                     style={{ alignSelf: 'flex-end',position:'absolute',zIndex:1}}
-                    onPress={()=>alert('changes')}
+                    onPress={()=>navigation.navigate('createPost2')}
                 />
                 <Image style={styles.image} source={images.cardImage}>
                 </Image>
@@ -39,10 +40,12 @@ const MyPostDesign = () => {
         <ScrollView>
             <View>
                 <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={()=>goBack('Drawer')}> 
                     <Image source={images.union} style={styles.img}></Image>
+                    </TouchableOpacity>
                     <Text style={styles.text}>My post</Text>
                 </View>
-                <Text style={[styles.text, { color: 'yellow', fontWeight: 'bold' }]}>Request Panding</Text>
+                <Text style={[styles.text, { color: colors.PrimaryBlue, fontWeight: 'bold' }]}>Request Panding</Text>
                 <Renderitems1 />
                 <Text style={[styles.text, { color: 'green', fontWeight: 'bold' }]}>Approved</Text>
                 <View style={{ flexDirection: 'row' }}>

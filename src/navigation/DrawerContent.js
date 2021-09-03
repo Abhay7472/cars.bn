@@ -62,7 +62,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="MY post"
-                            onPress={() => { props.navigation.navigate('MyPost') }}
+                            onPress={() => { props.navigation.navigate('MyPostDesign') }}
                         />
 
                         <DrawerItem
@@ -96,7 +96,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Ask Admin"
-                            onPress={() => { props.navigation.navigate('RequestStatus') }}
+                            onPress={() => { props.navigation.navigate('AskAdmin')}}
                         />
 
                         <DrawerItem

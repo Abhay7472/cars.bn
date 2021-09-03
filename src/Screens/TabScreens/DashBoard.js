@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView, FlatList } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import images from './constants/Images';
-import Button from './components/Button';
-import { Card } from '@material-ui/core';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { color } from 'react-native-elements/dist/helpers';
+import images from '../../constants/Images';
+import Button from '../../components/Button';
+// import { Card } from '@material-ui/core';
+// import AntDesign from 'react-native-vector-icons/AntDesign';
+// import FontAwesome from 'react-native-vector-icons/FontAwesome';
+// import { color } from 'react-native-elements/dist/helpers';
 
 const Dashboard = () => {
 
@@ -125,17 +125,9 @@ const Dashboard = () => {
         )
 
     }
-
-
-
-
     return (
         <ScrollView>
             <View>
-                <View style={{ flexDirection: 'row' }}>
-                    <Image source={images.union} style={styles.img}></Image>
-                    <Text style={styles.text}> Dashboard  </Text>
-                </View>
                 <TouchableOpacity >
                     <View style={styles.btn}>
                         <Text style={styles.btntext}> Create Post</Text>

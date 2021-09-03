@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import DocumentPicker from 'react-native-document-picker'
 
 import colors from '../../constants/Colors';
@@ -88,8 +89,8 @@ const RagistrationDealerScreen = ({ navigation }) => {
                     {/* <View style={[styles.headerWrapper, { marginTop: 5 }]}> */}
                     <Text style={{ color: "#213884" ,paddingTop:10}}>  Compony Document</Text>          
                       <TouchableOpacity  
-                      onPress={()=>ComponyDocument()} style={styles.headerWrapper}>                      
-                       <Ionicons name="document-text" size={30}style={{ alignSelf:'center'}} />
+                      onPress={()=>ComponyDocument()}  >                      
+                       <FontAwesome5 name="file-upload" size={30}style={{paddingTop:15,paddingLeft:10}} />
                       </TouchableOpacity>                
                       
                     <TouchableOpacity style={styles.btn}

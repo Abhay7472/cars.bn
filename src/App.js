@@ -6,9 +6,10 @@ import { DrawerContent } from './navigation/DrawerContent';
 import MainTabScreen from './navigation/MainTabScreen';
 import RootStackScreen from './Screens/LoginScreen/RootStackScreen';
 import AsyncStorage from '@react-native-community/async-storage';
-import NewPostStackSrcreen from './Screens/NewPostStackScreen/CreatePost1'
 
-import MyPost from './Screens/DrawerScreen/MyPost';
+import AskAdmin from './Screens/DrawerScreen/AskAdmin';
+import NewPostStackSrcreen from './Screens/NewPostStackScreen/CreatePost1' 
+import MyPostDesign from '../src/Screens/NewPostStackScreen/MyPostDesign';
 import RequestStatus from './Screens/DrawerScreen/RequestStatus';
 import TermCondition from './Screens/DrawerScreen/TermCondition';
 import PrivacyPolicy from './Screens/DrawerScreen/PrivacyPolicy';
@@ -119,13 +120,14 @@ const App = () => {
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {loginState.userToken !== null ? (
-          <Drawer.Navigator drawerContent={props => <DrawerContent {...props}/>}>
-            <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
-            <Drawer.Screen name="MyPost" component={MyPost} />
-            <Drawer.Screen name="NewPostStackSrcreen" component={NewPostStackSrcreen} />
-            <Drawer.Screen name="RequestStatus" component={RequestStatus} />
-            <Drawer.Screen name="TermCondition" component={TermCondition}  options={{ headerShown: false }}/>
-            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy}  options={{ headerShown: false }}/>
+          <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+            <Drawer.Screen name="DashBoard" component={MainTabScreen}  />
+            <Drawer.Screen name="MyPostDesign" component={MyPostDesign} options={{ headerShown: false }}/>             
+            <Drawer.Screen name="NewPostStackSrcreen" component={NewPostStackSrcreen}options={{ headerShown: false }} />
+            <Drawer.Screen name="RequestStatus" component={RequestStatus}options={{ headerShown: false }} />
+            <Drawer.Screen name="TermCondition" component={TermCondition} options={{ headerShown: false }} />
+            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ headerShown: false }} />
+            <Drawer.Screen name="AskAdmin" component={AskAdmin} options={{ headerShown: false }} />
           </Drawer.Navigator>
         )
           :

@@ -6,10 +6,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Colors from '../constants/Colors';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import ExploreScreen from '../Screens/TabScreens/ExploreScreen'
+import Profile from '../Screens/TabScreens/Profile'
 import Notification from '../Screens/TabScreens/Notification';
  import Auction from '../Screens/TabScreens/Auction';
-import Home1 from '../Screens/TabScreens/Home1';
+ import DashBoard from  '../Screens/TabScreens/DashBoard.js'
 import Saved from '../Screens/TabScreens/Saved';
 
 
@@ -28,14 +28,14 @@ const MainTabScreen = () => (
   >
     <Tab.Screen
       name="HOME"
-      component={Home1}
+      component={DashBoard}
       options={{
         tabBarLabel: 'Home',
         tabBarColor: '#0000cd',
         tabBarIcon: ({ color }) => (
           <Icon name="ios-home" color={color} size={26} />
         ),
-      }}
+      }}  
     />
     <Tab.Screen
       name="SAVED"
@@ -43,6 +43,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'SAVED',
         tabBarColor: '#0000cd',
+       
         tabBarIcon: ({ color }) => (
           <Icon name="heart" color={color} size={26} />
         ),
@@ -50,6 +51,7 @@ const MainTabScreen = () => (
     />
         <Tab.Screen
       name="Notification"
+             
       component={Notification}
       options={{
         tabBarLabel: 'Notification',
@@ -72,7 +74,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Explore"
-      component={ExploreScreen}
+      component={Profile}
       options={{
         tabBarLabel: 'Explore',
         tabBarColor: '#0000cd',

@@ -6,7 +6,7 @@ import colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
 
-const CreatePost1 = (props,{navigation}) => {
+const CreatePost1 = ( {navigation: { goBack }} ) => {
     // const [enable, setEnable] = useState(true);
     const [checked, setChecked] = React.useState('first');
 
@@ -85,7 +85,9 @@ const CreatePost1 = (props,{navigation}) => {
         <View>
 
             <View style={{ flexDirection: 'row' }}>
-                <Image source={images.union} style={styles.img}></Image>
+               <TouchableOpacity onPress={()=>goBack('Drawer')}> 
+                   <Image source={images.union} style={styles.img} ></Image>
+               </TouchableOpacity>
                 <Text style={styles.text}>Create post</Text>
             </View>
             <View style={{ marginTop: 30, marginBottom: 20 }}>

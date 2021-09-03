@@ -17,6 +17,9 @@ const images = {
    exterior: require('../assets/exterior.png'),
    inspectionCar: require('../assets/inspectionCar.png'),
    roadtest: require('../assets/roadtest.png'),
+   notification: require('../assets/notification.png'),
+    plus: require('../assets/plus.png'),
+    cancle: require('../assets/cancle.png'),
 
 
 }

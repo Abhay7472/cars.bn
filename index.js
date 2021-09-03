@@ -4,11 +4,11 @@
 
 import {AppRegistry} from 'react-native';
 import App from './src/App';
-import {name as appName} from './app.json';
-   import MyPostDesign from './src/MyPostDesign'
- 
+import {name as appName} from './app.json'; 
+//import RagistrationDealerScreen from './src/Screens/LoginScreen/RagistrationDealerScreen'
+ import ForAuction from './src/ForAuction'
 
-AppRegistry.registerComponent(appName, () =>App);
+AppRegistry.registerComponent(appName, () =>ForAuction);
 
 
 //yashika
@@ -34,8 +34,13 @@ AppRegistry.registerComponent(appName, () =>App);
 // changes
 //tab  =>  remove sell tab  (done)
 // drawer =>  privacy policy and term (add) ,, auction (remoe) ===(Done)
-//login screen 
+//login screen  
 
 
 //questions 
 // create post main password input and button work nhi kr rha  
+ 
+//file-upload
+//FontAwesome5
+//register screen changes 
+//veriant button color dash board

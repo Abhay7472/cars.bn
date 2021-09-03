@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions, ScrollView,TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
-const TermCondition = () => {
+const TermCondition = ({navigation:{goBack}}) => {
 
     return (
         <ScrollView style={styles.main}>
@@ -12,7 +12,9 @@ const TermCondition = () => {
                 <Image style={styles.img} source={images.carLogo} />
             </View>
             <View style={styles.lower}>
+            <TouchableOpacity onPress={()=>goBack('Drawer')}>
                 <Ionicons name="chevron-back" color={"#213884"} size={35} />
+                </TouchableOpacity>
                 <Text style={styles.heading}> Term & Conditions  </Text>
                 <Text style={styles.head}>Lorem Ipsum</Text>
                 <Text style={styles.body}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>

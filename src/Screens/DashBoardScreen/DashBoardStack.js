@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeScreen from './HomeScreen';
+ import DashBoard from '../TabScreens/DashBoard.js'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
@@ -24,7 +24,7 @@ const HomeStackScreen = (props,{route,navigation}) => (
             <FontAwesome.Button name="bell" size={20} backgroundColor="#000" onPress={() => props.navigation.navigate('NotifiStackScreen', { screen: 'Notifications'})}></FontAwesome.Button>
         )
     }}>
-        <DashBoardStack.Screen name="HomeScreen" component={HomeScreen} options={{title:'Home',}} />
+        <DashBoardStack.Screen name="DashBoard" component={DashBoard} options={{title:'Home',}} />
 
 
 </DashBoardStack.Navigator>
