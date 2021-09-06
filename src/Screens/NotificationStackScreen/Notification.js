@@ -38,7 +38,7 @@ const Notifications =()=>{
             <FlatList
                 data= {data}
                 renderItem = {renderitems}
-                // keyExtractor={item => item.title}
+                 keyExtractor={item => item.title}
             />
         </View>
     )

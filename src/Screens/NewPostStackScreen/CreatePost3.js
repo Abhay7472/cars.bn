@@ -10,7 +10,7 @@ import Button from '../../components/Button';
 
 
 
-const CreatePost3 = ({ navigation }) => {
+const CreatePost3 = ({navigation:{goBack}}) => {
 
     const [checked, setChecked] = React.useState('first');
     const [pickerValue, setpickerValue] = React.useState('first');
@@ -20,7 +20,7 @@ const CreatePost3 = ({ navigation }) => {
         <ScrollView>
             <View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Image source={images.union} style={styles.img}></Image>
+                    <Image onPress={()=>goBack('Drawer')} source={images.union} style={styles.img}></Image>
                     <Text style={styles.text}>Create post</Text>
                 </View>
                 <Image source={images.carImage} style={{ borderRadius: 40, alignSelf: 'center', width: "95%", marginTop: 20 }} />
@@ -39,7 +39,7 @@ const CreatePost3 = ({ navigation }) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={styles.textInputText}>Model</Text>
+                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Model</Text>
                         <Picker
                             style={styles.picker}
                             selectedValue={pickerValue}
@@ -51,7 +51,7 @@ const CreatePost3 = ({ navigation }) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={styles.textInputText}>Category</Text>
+                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Category</Text>
                         <Picker
                             style={styles.picker}
                             selectedValue={pickerValue}                            
@@ -63,7 +63,7 @@ const CreatePost3 = ({ navigation }) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={styles.textInputText}>Current Mileage</Text>
+                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Current Mileage</Text>
                         <TextInput style={styles.textInput}>
                         </TextInput>
                     </View>

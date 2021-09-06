@@ -4,7 +4,7 @@ import { SliderBox } from "react-native-image-slider-box";
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Colors from './constants/Colors';
+import Colors from '../../constants/Colors';
 
 const AuctionLiveBidding = () => {
 

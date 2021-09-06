@@ -1,28 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
+import { Modal, View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
+
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import colors from '../../constants/Colors';
-
+import { ModalPicker } from '../../components/ModalPicker';
 import images from '../../constants/Images';
 
-const MyPostDesign = ({navigation:{goBack}}) => {
+//
+const MyPostDesign = ({ navigation: { goBack } }) => {
+
+    const [isModalVisible, setisModalVisible] = useState(false);
+
+    const changeModalVisibility = (bool) => {
+        setisModalVisible(bool)
+    }
+
+    const setData = (option) => {
+        setChooseData(option)
+    }
 
     const data1 = [
         { title: '2018 Toyota C HR 1.8', paragraph: 'Automatic | 4Seater | Sadan', body: 'Lodon Ispum is simple domy Text' },
         { title: "BMW", paragraph: '4250 km | Automatic', body: '25000$' }]
 
-    const Renderitems1 = ({ item }) => {
+    const Renderitems1 = () => {
         return (
 
             <View style={styles.outerbox}>
-               
                 <Icon
                     name='more-vert'
                     size={30}
                     color='white'
-                    style={{ alignSelf: 'flex-end',position:'absolute',zIndex:1}}
-                    onPress={()=>navigation.navigate('createPost2')}
-                />
+                    style={{ alignSelf: 'flex-end', position: 'absolute', zIndex: 1 }}
+                    onPress={() => changeModalVisibility(true)} />
+
                 <Image style={styles.image} source={images.cardImage}>
                 </Image>
                 <View style={styles.innerbox}>
@@ -30,6 +41,28 @@ const MyPostDesign = ({navigation:{goBack}}) => {
                     <Text style={styles.paragraph}> 4250km | Automatic</Text>
                     <Text style={[styles.paragraph, { color: "#213884", fontSize: 20 }]}> $ 25000</Text>
                 </View>
+                <Modal
+                    transparent={true}
+                    visible={isModalVisible}
+                    animationType="fade"
+                    nRequestClose={() => changeModalVisibility(false)}
+                >
+                    <ModalPicker
+                        changeModalVisibility={changeModalVisibility}
+                        setData={setData} />
+                    <View style={{ position: 'absolute' }}>
+                        <View style={{ backgroundColor: '#ffffff', margin: 10, padding: 10, borderRadius: 10, }}>
+                            <Text onPress={() => { this.setState({ show: false }) }}
+                                style={{ padding: 10, borderBottomWidth: 1, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
+                                <Icon name='edit'
+                                    color="red" /> Edit</Text>
+                            <Text onPress={() => { this.setState({ show: false }) }}
+                                style={{ padding: 10, }}>
+                                <Icon name='delete'
+                                    color="red" /> Delete</Text>
+                        </View>
+                    </View>
+                </Modal>
             </View>
         )
     }
@@ -39,12 +72,7 @@ const MyPostDesign = ({navigation:{goBack}}) => {
     return (
         <ScrollView>
             <View>
-                <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity onPress={()=>goBack('Drawer')}> 
-                    <Image source={images.union} style={styles.img}></Image>
-                    </TouchableOpacity>
-                    <Text style={styles.text}>My post</Text>
-                </View>
+
                 <Text style={[styles.text, { color: colors.PrimaryBlue, fontWeight: 'bold' }]}>Request Panding</Text>
                 <Renderitems1 />
                 <Text style={[styles.text, { color: 'green', fontWeight: 'bold' }]}>Approved</Text>
@@ -85,18 +113,18 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         marginHorizontal: 10,
         marginTop: 20,
-        flex:2
+        flex: 2
     },
     image: {
         height: 100,
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        flex:1
+        flex: 1
     },
     innerbox: {
         padding: 10,
-        flex:1
+        flex: 1
     },
     title: {
         color: 'black',

@@ -1,7 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeScreen from './HomeScreen';
+ import Auction from './Auction';
+ import AuctionLiveBidding from './AuctionLiveBidding';
+ import ForAuction from './ForAuction';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
@@ -24,7 +26,9 @@ const AuctionStackScreen = (props,{route,navigation}) => (
             <FontAwesome.Button name="bell" size={20} backgroundColor="#000" onPress={() => props.navigation.navigate('NotifiStackScreen', { screen: 'Notifications'})}></FontAwesome.Button>
         )
     }}>
-        <AuctionStack.Screen name="HomeScreen" component={HomeScreen} options={{title:'Home',}} />
+        <AuctionStack.Screen name="Auction" component={Auction} options={{title:'Home',}} />
+        <AuctionStack.Screen name="AuctionLiveBidding" component={AuctionLiveBidding} options={{title:'Home',}} />
+        <AuctionStack.Screen name="ForAuction" component={ForAuction} options={{title:'Home',}} />
 
 
 </AuctionStack.Navigator>

@@ -1,15 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
- import DashBoard from './DashBoard.js'
+ import MyProfile from './MyProfile.js'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
 
-const DashBoardStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
 
-const HomeStackScreen = (props,{route,navigation}) => (
-<DashBoardStack.Navigator screenOptions={{
+const ProfileStackScreen = (props,{route,navigation}) => (
+<ProfileStack.Navigator screenOptions={{
         headerStyle: {
         backgroundColor: '#000'},
         headerTintColor: '#fff',
@@ -24,10 +24,10 @@ const HomeStackScreen = (props,{route,navigation}) => (
             <FontAwesome.Button name="bell" size={20} backgroundColor="#000" onPress={() => props.navigation.navigate('NotifiStackScreen', { screen: 'Notifications'})}></FontAwesome.Button>
         )
     }}>
-        <DashBoardStack.Screen name="DashBoard" component={DashBoard} options={{title:'Home',headerShown:true}} />
+        <ProfileStack.Screen name="MyProfile" component={MyProfile} options={{title:'MyProfile',headerShown:true}} />
 
 
-</DashBoardStack.Navigator>
+</ProfileStack.Navigator>
 );
 
-export default HomeStackScreen; 
+export default ProfileStackScreen; 

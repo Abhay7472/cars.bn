@@ -6,13 +6,8 @@ import { DrawerContent } from './navigation/DrawerContent';
 import MainTabScreen from './navigation/MainTabScreen';
 import RootStackScreen from './Screens/LoginScreen/RootStackScreen';
 import AsyncStorage from '@react-native-community/async-storage';
-
-import AskAdmin from './Screens/DrawerScreen/AskAdmin';
-import NewPostStackSrcreen from './Screens/NewPostStackScreen/CreatePost1' 
-import MyPostDesign from '../src/Screens/NewPostStackScreen/MyPostDesign';
-import RequestStatus from './Screens/DrawerScreen/RequestStatus';
-import TermCondition from './Screens/DrawerScreen/TermCondition';
-import PrivacyPolicy from './Screens/DrawerScreen/PrivacyPolicy';
+import  PaymentStack from './Screens/PaymentsStackScreen/PaymentStack'
+ 
 
 import { AuthContext } from './model/context';
 
@@ -121,13 +116,10 @@ const App = () => {
       <NavigationContainer>
         {loginState.userToken !== null ? (
           <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-            <Drawer.Screen name="DashBoard" component={MainTabScreen}  />
-            <Drawer.Screen name="MyPostDesign" component={MyPostDesign} options={{ headerShown: false }}/>             
-            <Drawer.Screen name="NewPostStackSrcreen" component={NewPostStackSrcreen}options={{ headerShown: false }} />
-            <Drawer.Screen name="RequestStatus" component={RequestStatus}options={{ headerShown: false }} />
-            <Drawer.Screen name="TermCondition" component={TermCondition} options={{ headerShown: false }} />
-            <Drawer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ headerShown: false }} />
-            <Drawer.Screen name="AskAdmin" component={AskAdmin} options={{ headerShown: false }} />
+            <Drawer.Screen name="MainTabScreen" component={MainTabScreen}  />
+            <Drawer.Screen name="PaymentStack" component={PaymentStack}  />
+               
+            
           </Drawer.Navigator>
         )
           :

@@ -15,7 +15,7 @@ export default function SocialLoginScreen({ navigation }) {
             </View>
             <View>
                 <TouchableOpacity style={style.socialInput}
-                    onPress={() => navigation.navigate('RegistrationScreen')}>
+                    onPress={() => navigation.navigate('SignInScreen')}>
                     <Image
                         source={images.Facebook}
                         style={style.icon} />
@@ -26,7 +26,7 @@ export default function SocialLoginScreen({ navigation }) {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={style.socialInput}
-                    onPress={() => navigation.navigate('RegistrationScreen')}>
+                    onPress={() => navigation.navigate('SignInScreen')}>
                     <Image
                         source={images.search}
                         style={[style.icon, { height: 40, width: 40 }]} />

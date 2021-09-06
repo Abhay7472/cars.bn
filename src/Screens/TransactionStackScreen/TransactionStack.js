@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeScreen from './HomeScreen';
+ import Transaction from './Transaction';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
@@ -24,7 +24,7 @@ const TransactionStackScreen = (props,{route,navigation}) => (
             <FontAwesome.Button name="bell" size={20} backgroundColor="#000" onPress={() => props.navigation.navigate('NotifiStackScreen', { screen: 'Notifications'})}></FontAwesome.Button>
         )
     }}>
-        <TransactionStack.Screen name="HomeScreen" component={HomeScreen} options={{title:'Home',}} />
+        <TransactionStack.Screen name="Transaction" component={Transaction} options={{title:'Transaction',}} />
 
 
 </TransactionStack.Navigator>

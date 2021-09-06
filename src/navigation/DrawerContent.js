@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import colors from '../constants/Colors';
+import { View,Text, StyleSheet } from 'react-native';
+
 import {
     Avatar,
     Title,
     Caption,
     Drawer,
+    TouchableRipple,
 } from 'react-native-paper';
 import {
     DrawerContentScrollView,
@@ -14,6 +15,12 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AuthContext } from '../model/context';
+import NewPostStack from '../Screens/NewPostStackScreen/NewPostStack'
+import MyPostStack from '../Screens/PostStackScreen/MyPostStack';
+import RequestStack from '../Screens/RequestStackScreen/RequestStack';
+import MessageStack from '../Screens/MessageStackScreen/MessageStack';
+import PrivacyStack from '../Screens/PrivacyPolicyStckScreen/PrivacyStack';
+import AdminStack from '../Screens/AdminStackScreen/AdminStack';
 
 
 export function DrawerContent(props) {
@@ -41,7 +48,7 @@ export function DrawerContent(props) {
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>
-                        <DrawerItem
+                        {/* <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="plus-box"
@@ -51,8 +58,17 @@ export function DrawerContent(props) {
                             )}
 
                             label="Post Your car"
-                            onPress={() => props.navigation.navigate('NewPostStackSrcreen', { screen: 'CreatePost1' })} />
-
+                            onPress={() => props.navigation.navigate('NewPostStackSrcreen', { screen: 'CreatePost1' })} /> */}
+                         <TouchableRipple  onPress={() => props.navigation.navigate('NewPostStackSrcreen', { screen: 'CreatePost1' })}>
+                            <View style={styles.preference}>
+                                <Text>Post Your car</Text>
+                                <Icon 
+                                    name="chevron-right"  
+                                    color={'#000'}
+                                    size={22}
+                                />
+                            </View>
+                        </TouchableRipple>
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
@@ -62,7 +78,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="MY post"
-                            onPress={() => { props.navigation.navigate('MyPostDesign') }}
+                            onPress={() => props.navigation.navigate('PostStackScreen', { screen: 'RentalCar' })}
                         />
 
                         <DrawerItem
@@ -73,7 +89,7 @@ export function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-                            label="RequestStatus"
+                            label="Request Status"
                             onPress={() => { props.navigation.navigate('RequestStatus') }}
                         />
                         <DrawerItem
@@ -96,7 +112,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Ask Admin"
-                            onPress={() => { props.navigation.navigate('AskAdmin')}}
+                            onPress={() => { props.navigation.navigate('AskAdmin') }}
                         />
 
                         <DrawerItem
@@ -108,9 +124,9 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Transaction"
-                            onPress={() => { props.navigation.navigate('Transaction') }}
+                            onPress={() => { props.navigation.navigate('Payment') }}
                         />
-                           <DrawerItem
+                        <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="account-check-outline"
@@ -118,10 +134,10 @@ export function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-                            label="PrivacyPolicy"
+                            label="Privacy Policy"
                             onPress={() => { props.navigation.navigate('PrivacyPolicy') }}
                         />
-                           <DrawerItem
+                        <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="account-check-outline"
@@ -129,7 +145,7 @@ export function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-                            label="Term &Condition"
+                            label="Term & Condition"
                             onPress={() => { props.navigation.navigate('TermCondition') }}
                         />
 

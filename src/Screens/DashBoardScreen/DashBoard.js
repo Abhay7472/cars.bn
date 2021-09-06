@@ -3,10 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions,
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import images from '../../constants/Images';
 import Button from '../../components/Button';
-// import { Card } from '@material-ui/core';
-// import AntDesign from 'react-native-vector-icons/AntDesign';
-// import FontAwesome from 'react-native-vector-icons/FontAwesome';
-// import { color } from 'react-native-elements/dist/helpers';
+
 
 const Dashboard = () => {
 
@@ -76,9 +73,11 @@ const Dashboard = () => {
                         </View>
                     </View>
                 </View>
-                <Text
-                    style={styles.view}>
-                    View More</Text>
+                <TouchableOpacity>
+                    <Text
+                        style={styles.view}>
+                        View More</Text>
+                </TouchableOpacity>
             </ScrollView>
         )
     }
@@ -143,7 +142,11 @@ const Dashboard = () => {
                         <Text style={{ color: 'red', padding: 10, fontSize: 15 }}>Recent Post</Text>
                         <RecentPostCard />
                         <RecentPostCard />
-                        <Text style={styles.view}>View More</Text>
+                        <TouchableOpacity>
+                            <Text
+                                style={styles.view}>
+                                View More</Text>
+                        </TouchableOpacity>
                     </View>
                     <Text style={{ color: "red", paddingTop: 15, paddingLeft: 15, fontSize: 20 }}>Recent Transaction And Bids</Text>
                     <Text style={{ fontSize: 15, paddingLeft: 15, paddingTop: 10 }}>26 Aug 2021 </Text>

@@ -1,57 +1,37 @@
 
 import React, { Component, useState } from 'react'
-import { Switch, FlatList, SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Pressable, } from 'react-native'
+import { alert,Switch, FlatList, SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Pressable, } from 'react-native'
 import StepIndicator from 'react-native-step-indicator';
 import { Picker } from '@react-native-picker/picker';
 import DocumentPicker from 'react-native-document-picker'
 
-import colors from './constants/Colors';
-import images from './constants/Images';
+import colors from '../../constants/Colors';
+import images from '../../constants/Images';
 import { Card, TextInput } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 
 
-const { width, height } = Dimensions.get("window");
+
 
 const ForAuction = () => {
-    const  ComponyDocument =()=>{
 
-        try {
-            const results =     DocumentPicker.pickMultiple({
-              type: [DocumentPicker.types.allFiles],
-            })
-            for (const res of results) {
-              console.log(
-                res.uri,
-                res.type, // mime type
-                res.name,
-                res.size,
-              )
-            }
-          } catch (err) {
-            if (DocumentPicker.isCancel(err)) {
-              // User cancelled the picker, exit any dialogs or menus and move on
-            } else {
-              throw err
-            }
-          }
-        }
-     // const deleteTodo = () => {
-    //     var arr = this.state.Todo;
-    //     var pos = arr.indexof(t);
-    //     arr.splice(pos, 1);
-    //     this.setState({ todo: arr });
-    // }
+    const [currentPosition, setCurrentPosition] = useState(2);
+    const [pickerValue, setpickerValue] = React.useState('first');
+    const [isEnabled, setIsEnabled] = useState(false);
+    const [isOn, setIson] = useState(false);
+
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+
     const array = [
         { id: 1, },
         { id: 2 },
         { id: 3 },
     ]
-    const data2=[
-        {id:1,},
-        ]
-    const [currentPosition, setCurrentPosition] = useState(2);
-    const [pickerValue, setpickerValue] = React.useState('first');
+    const data2 = [
+        { id: 1, },
+
+    ]
 
 
     const renderitems1 = ({ item }) => {
@@ -60,9 +40,11 @@ const ForAuction = () => {
             <View style={{ marginLeft: 10 }} >
 
                 <TouchableOpacity id={1} onPress={() => this.deleteTodo}>
-                    <Image source={images.cancle} style={{ alignSelf: 'flex-end' }} /></TouchableOpacity>
-                <TouchableOpacity  onPress={()=>ComponyDocument()} >
-                    <Image style={styles.image} source={images.cardImage} /></TouchableOpacity>
+                    <Image source={images.cancle} style={{ alignSelf: 'flex-end' }} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ComponyDocument()} >
+                    <Image style={styles.image} source={images.cardImage} />
+                </TouchableOpacity>
 
             </View>
         )
@@ -142,7 +124,11 @@ const ForAuction = () => {
                 <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                     <Text style={{ paddingTop: 30, paddingLeft: 10, color: colors.PrimaryBlue, fontSize: 15 }}>
                         Sell your car within 24 Hours Useing quickSell  </Text>
-                    <Switch />
+                    <Switch
+                        trackColor={{ false: "red", true: "green" }}
+                        thumbColor={isEnabled ? "white" : "white"}
+                        onValueChange={toggleSwitch}
+                        value={isEnabled} />
                 </View>
             </View>
             <View>
@@ -160,32 +146,49 @@ const ForAuction = () => {
             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                 <Text style={{ paddingTop: 30, paddingLeft: 10, color: colors.PrimaryBlue, fontSize: 15 }}>
                     1. Not Sure? Get Inspection By CarsBN </Text>
-                <Switch />
+                <Switch
+                    trackColor={{ false: "red", true: "green" }}
+                    thumbColor={isEnabled ? "white" : "white"}
+                    onValueChange={toggleSwitch}
+                    value={isEnabled} />
             </View>
             <Text style={{ paddingTop: 20, paddingLeft: 10, color: colors.PrimaryBlue, fontSize: 15 }}>Upoad Images</Text>
             <View style={{ flexDirection: "row", justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
-                <FlatList style={styles.flatList} horizontal showsHorizontalScrollIndicator={false} data={array} renderItem={renderitems1}  > </FlatList>
-            </View>
-            <View style={{ flexDirection: "row", justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
-                <FlatList style={[styles.flatList, { paddingTop: 10 }]} horizontal showsHorizontalScrollIndicator={false} data={data2} renderItem={renderitems1} keyExtractor={item => item.title}> </FlatList>
-                <TouchableOpacity>
-                    <Card style={styles.card}>
-                        <Image source={images.plus} style={{ alignSelf: 'center' }} />
-                    </Card>
+                <View style={styles.box}>
+                    <Image source={images.cardImage} style={styles.image}></Image>
+                    <Image source={images.cancle} style={styles.cancle} onPress={()=>alert('cancle')}/>
+                </View>
+                <View style={styles.box}>
+                    <Image source={images.cardImage} style={styles.image}></Image>
+                    <Image source={images.cancle} style={styles.cancle}onPress={()=>alert('cancle')} />
+                </View>
+                <View style={styles.box}>
+                    <Image source={images.cardImage} style={styles.image}></Image>
+                    <Image source={images.cancle} style={styles.cancle} onPress={()=>alert('cancle')}/>
+                </View>
+                <View style={styles.box} >
+                    <Image source={images.cardImage} style={styles.image}></Image>
+                    <Image source={images.cancle} style={styles.cancle} onPress={()=>alert('cancle')}/>
+                </View>
+                <TouchableOpacity style={styles.plusBtn}>
+                    <Image source={images.plus} ></Image>
                 </TouchableOpacity>
             </View>
+
             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                 <Text style={{ paddingTop: 15, paddingLeft: 10, color: colors.PrimaryBlue, fontSize: 15 }}>
                     2. Professional Photos attracts more views  </Text>
-                <Switch />
+                <Switch
+                    trackColor={{ false: "red", true: "green" }}
+                    thumbColor={isOn ? "white" : "white"}
+                    onValueChange={toggleSwitch}
+                    value={isOn} />
             </View>
             <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
                 <Text style={{ paddingLeft: 22, color: colors.PrimaryBlue, fontSize: 15 }}>
                     Get proper photo with 360 angles ?  </Text>
             </View>
-            <TouchableOpacity           
-                 
-                >
+            <TouchableOpacity>
                 <Text style={styles.btn}> Next </Text>
             </TouchableOpacity>
         </ScrollView>
@@ -193,6 +196,25 @@ const ForAuction = () => {
 }
 
 const styles = StyleSheet.create({
+    box: {
+        marginTop: 15
+    },
+    plusBtn: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: colors.PrimaryBlue,
+        borderWidth: 1,
+        height: 90,
+        width: 110,
+        borderRadius: 10,
+        marginTop: 15
+
+    },
+    cancle: {
+        position: 'absolute',
+        right: -7,
+        top: -7
+    },
     btn: {
         backgroundColor: "#213884",
         color: 'white',
@@ -267,8 +289,8 @@ const styles = StyleSheet.create({
     image: {
         height: 90,
         width: 110,
-        justifyContent: 'space-evenly',
-        marginLeft: 5,
+
+
     },
 
     outerbox: {
@@ -296,7 +318,3 @@ const styles = StyleSheet.create({
 
 
 export default ForAuction;
-
-
-
-

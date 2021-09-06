@@ -10,31 +10,34 @@ import images from '../../constants/Images'
 
 const RagistrationDealerScreen = ({ navigation }) => {
 
-    const  ComponyDocument =()=>{
+    const ComponyDocument = async authProps => {
 
         try {
-            const results =     DocumentPicker.pickMultiple({
-              type: [DocumentPicker.types.allFiles],
+            // const header ={
+            //     Authorization: authProps.idToken 
+            // }
+            const results = await DocumentPicker.pickMultiple({
+                type: [DocumentPicker.types.allFiles],
             })
             for (const res of results) {
-              console.log(
-                res.uri,
-                res.type, // mime type
-                res.name,
-                res.size,
-              )
+                console.log(
+                    res.uri,
+                    res.type, // mime type
+                    res.name,
+                    res.size,
+                )
             }
-          } catch (err) {
+        } catch (err) {
             if (DocumentPicker.isCancel(err)) {
-              // User cancelled the picker, exit any dialogs or menus and move on
+                // User cancelled the picker, exit any dialogs or menus and move on
             } else {
-              throw err
+                throw err
             }
-          }
         }
+    }
 
     const Form = () => {
-        
+
         return (
             <ScrollView>
                 <View>
@@ -87,12 +90,12 @@ const RagistrationDealerScreen = ({ navigation }) => {
                         <TextInput placeholder=" Comapny Name  " style={styles.input}> </TextInput>
                     </View>
                     {/* <View style={[styles.headerWrapper, { marginTop: 5 }]}> */}
-                    <Text style={{ color: "#213884" ,paddingTop:10}}>  Compony Document</Text>          
-                      <TouchableOpacity  
-                      onPress={()=>ComponyDocument()}  >                      
-                       <FontAwesome5 name="file-upload" size={30}style={{paddingTop:15,paddingLeft:10}} />
-                      </TouchableOpacity>                
-                      
+                    <Text style={{ color: "#213884", paddingTop: 10 }}>  Compony Document</Text>
+                    <TouchableOpacity
+                        onPress={() => ComponyDocument()}  >
+                        <FontAwesome5 name="file-upload" size={30} style={{ paddingTop: 15, paddingLeft: 10 }} />
+                    </TouchableOpacity>
+
                     <TouchableOpacity style={styles.btn}
                         onPress={() => navigation.navigate('SignInScreen')}>
                         <Text style={styles.text}>Submit</Text>
@@ -172,7 +175,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         alignSelf: 'auto',
         color: colors.PrimaryBlue,
-         marginTop:10
+        marginTop: 10
     },
 
 })

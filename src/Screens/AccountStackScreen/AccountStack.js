@@ -25,7 +25,7 @@ const AccountStackScreen = (props,{route,navigation}) => (
             <FontAwesome.Button name="bell" size={20} backgroundColor="#000" onPress={() => props.navigation.navigate('NotifiStackScreen', { screen: 'Notifications'})}></FontAwesome.Button>
         )
     }}>
-        <AccountStack.Screen name="HomeScreen" component={HomeScreen} options={{title:'Home',}} />
+        <AccountStack.Screen name="Account Screen" component={AccountScreen} options={{title:'Home',}} />
 
 
 </AccountStack.Navigator>

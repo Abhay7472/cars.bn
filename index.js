@@ -5,10 +5,10 @@
 import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json'; 
-//import RagistrationDealerScreen from './src/Screens/LoginScreen/RagistrationDealerScreen'
- import ForAuction from './src/ForAuction'
+ 
+ 
 
-AppRegistry.registerComponent(appName, () =>ForAuction);
+AppRegistry.registerComponent(appName, () =>App);
 
 
 //yashika
@@ -39,8 +39,15 @@ AppRegistry.registerComponent(appName, () =>ForAuction);
 
 //questions 
 // create post main password input and button work nhi kr rha  
+//dashBoard screen bottom Tab
+//create post
+
  
 //file-upload
 //FontAwesome5
 //register screen changes 
 //veriant button color dash board
+
+
+//first sin in then register
+//drawer tittle change

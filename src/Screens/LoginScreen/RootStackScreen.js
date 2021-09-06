@@ -10,8 +10,6 @@ import UserLoginScreen from './UserLoginScreen';
 import RegistrationScreen from './RegistrationScreen'
 import SocialLoginScreen from './SocialLoginScreen'
 import RagistrationDealerScreen from './RagistrationDealerScreen'
- 
- 
 
 
  
