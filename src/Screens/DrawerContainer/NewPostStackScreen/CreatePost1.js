@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, } from 'react-native'
 import StepIndicator from 'react-native-step-indicator';
 import { RadioButton, TextInput } from 'react-native-paper';
-import colors from '../../constants/Colors';
-import images from '../../constants/Images';
+import colors from '../../../constants/Colors';
+import images from '../../../constants/Images';
 
 
 const CreatePost1 = ( {navigation: { goBack }} ) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import {
     Avatar,
@@ -15,12 +15,6 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AuthContext } from '../model/context';
-import NewPostStack from '../Screens/NewPostStackScreen/NewPostStack'
-import MyPostStack from '../Screens/PostStackScreen/MyPostStack';
-import RequestStack from '../Screens/RequestStackScreen/RequestStack';
-import MessageStack from '../Screens/MessageStackScreen/MessageStack';
-import PrivacyStack from '../Screens/PrivacyPolicyStckScreen/PrivacyStack';
-import AdminStack from '../Screens/AdminStackScreen/AdminStack';
 
 
 export function DrawerContent(props) {
@@ -48,7 +42,7 @@ export function DrawerContent(props) {
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>
-                        {/* <DrawerItem
+                        <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="plus-box"
@@ -58,17 +52,8 @@ export function DrawerContent(props) {
                             )}
 
                             label="Post Your car"
-                            onPress={() => props.navigation.navigate('NewPostStackSrcreen', { screen: 'CreatePost1' })} /> */}
-                         <TouchableRipple  onPress={() => props.navigation.navigate('NewPostStackSrcreen', { screen: 'CreatePost1' })}>
-                            <View style={styles.preference}>
-                                <Text>Post Your car</Text>
-                                <Icon 
-                                    name="chevron-right"  
-                                    color={'#000'}
-                                    size={22}
-                                />
-                            </View>
-                        </TouchableRipple>
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'CreatePost1' })} />
+
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
@@ -78,7 +63,8 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="MY post"
-                            onPress={() => props.navigation.navigate('PostStackScreen', { screen: 'RentalCar' })}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'MyPostDesign' })}
+                        //onPress={() => props.navigation.navigate('', { screen: 'MyPostDesign' })}
                         />
 
                         <DrawerItem
@@ -90,7 +76,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Request Status"
-                            onPress={() => { props.navigation.navigate('RequestStatus') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'RequestStatus' })}
                         />
                         <DrawerItem
                             icon={({ color, size }) => (
@@ -101,7 +87,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Messages"
-                            onPress={() => { props.navigation.navigate('Message') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'Message' })}
                         />
                         <DrawerItem
                             icon={({ color, size }) => (
@@ -112,7 +98,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Ask Admin"
-                            onPress={() => { props.navigation.navigate('AskAdmin') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'AskAdmin' })}
                         />
 
                         <DrawerItem
@@ -124,7 +110,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Transaction"
-                            onPress={() => { props.navigation.navigate('Payment') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'Payment' })}
                         />
                         <DrawerItem
                             icon={({ color, size }) => (
@@ -135,7 +121,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Privacy Policy"
-                            onPress={() => { props.navigation.navigate('PrivacyPolicy') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'PrivacyPolicy' })}
                         />
                         <DrawerItem
                             icon={({ color, size }) => (
@@ -146,7 +132,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Term & Condition"
-                            onPress={() => { props.navigation.navigate('TermCondition') }}
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'TermCondition' })}
                         />
 
                         <DrawerItem

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Modal, View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import colors from '../../constants/Colors';
-import { ModalPicker } from '../../components/ModalPicker';
-import images from '../../constants/Images';
+import colors from '../../../constants/Colors';
+import { ModalPicker } from '../../../components/ModalPicker';
+import images from '../../../constants/Images';
 
-//
-const MyPostDesign = ({ navigation: { goBack } }) => {
+//{ navigation: { goBack } }
+const MyPostDesign = () => {
 
     const [isModalVisible, setisModalVisible] = useState(false);
 

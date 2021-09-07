@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Switch, View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { Slider } from 'react-native-elements';
 import StepIndicator from 'react-native-step-indicator';
-import colors from '../../constants/Colors';
-import images from '../../constants/Images';
+import colors from '../../../constants/Colors';
+import images from '../../../constants/Images';
 
 const SuccessfullPostCreated = () => {
     // const [enable, setEnable] = useState(true);

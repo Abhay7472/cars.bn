@@ -6,8 +6,8 @@ import { DrawerContent } from './navigation/DrawerContent';
 import MainTabScreen from './navigation/MainTabScreen';
 import RootStackScreen from './Screens/LoginScreen/RootStackScreen';
 import AsyncStorage from '@react-native-community/async-storage';
-import  PaymentStack from './Screens/PaymentsStackScreen/PaymentStack'
- 
+import DrawerContainerStack from './Screens/DrawerContainer/DrawerContainerStack';
+
 
 import { AuthContext } from './model/context';
 
@@ -116,10 +116,9 @@ const App = () => {
       <NavigationContainer>
         {loginState.userToken !== null ? (
           <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-            <Drawer.Screen name="MainTabScreen" component={MainTabScreen}  />
-            <Drawer.Screen name="PaymentStack" component={PaymentStack}  />
-               
-            
+            <Drawer.Screen name="MainTabScreen" component={MainTabScreen} options={{headerShown:false}}/>
+            <Drawer.Screen name="DrawerContainerStack" component={DrawerContainerStack} options={{headerShown:false}} />
+
           </Drawer.Navigator>
         )
           :

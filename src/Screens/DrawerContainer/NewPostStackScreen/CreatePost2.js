@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView, FlatList } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
  
-import colors from '../../constants/Colors';
-import images from '../../constants/Images';
+import colors from '../../../constants/Colors';
+import images from '../../../constants/Images';
  
 
 

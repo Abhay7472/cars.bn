@@ -8,6 +8,7 @@ import images from '../../constants/Images';
 import Button from '../../components/Button';
 import colors from '../../constants/Colors'
 import { Card, TextInput } from 'react-native-paper'; 
+import { Item } from 'react-native-paper/lib/typescript/components/List/List';
 
 
   class RequestStatus extends Component{   
@@ -24,7 +25,7 @@ import { Card, TextInput } from 'react-native-paper';
            this.setState({
                check:!this.state.check
            })
-         //  alert(' now value is '+ !this.state.check)
+        //  alert(' now value is '+ !this.state.check)
       }
     
       onchecked(id){
@@ -65,7 +66,7 @@ render(){
                     <View style={{ flexDirection: 'row', marginTop: 20 }}>
                         <Text style={{ color: colors.PrimaryBlue, fontSize: 18 }}>Lorium Ipsum</Text>
                         <CheckBox
-                            onChange={()=>this.checkboxText( id)}
+                            onChange={()=>this.checkboxText(id)}
                              value={this.state.check}                  
                             
                              style={{marginLeft:"50%"}}                                
