@@ -21,7 +21,7 @@ const images = {
     plus: require('../assets/plus.png'),
     cancle: require('../assets/cancle.png'),
      
-    // car: require('../assets/cardImage.png'),
+   camera: require('../assets/camera.png'),
     bell: require('../assets/ic_notifications_activasdasdasde_24px.png'),
     accountWallet: require('../assets/accountWWallet.png'),
     icon1: require('../assets/360_F_347134350_dhjJjzA1fuGvXOyNgCJYfOEby04ljhEC-removebg-preview.png'),

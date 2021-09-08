@@ -8,7 +8,7 @@ import Colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
 
-const RentalCar =( )=>{
+const RentalCar =({navigation})=>{
 
     const [like, setLike] = useState(false)
     const [List1, setList1] = useState(false)

@@ -41,7 +41,7 @@ const HomePage = ({ navigation }) => {
         return (
 
             <View style={styles.outerbox}>
-                <Image style={styles.image} source={{ uri: item.image }} />
+                <Image style={styles.image} source={{ uri: item.image }}  onPress={() => showAlert()}/>
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.paragraph}>{item.body}</Text>
@@ -54,7 +54,7 @@ const HomePage = ({ navigation }) => {
     const renderitems2 = ({ item }) => {
         return (
             <View style={styles.outerbox}>
-                <Image style={styles.image} source={{ uri: item.image }} />
+                <Image style={styles.image} source={{ uri: item.image }}  onPress={() => showAlert()}/>
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.paragraph}>{item.body}</Text>
@@ -171,8 +171,8 @@ const HomePage = ({ navigation }) => {
     return (
 
         <ScrollView style={styles.main} >
-            <Ionicons name="menu-outline" color={colors.Blue} size={40} style={{ position: 'absolute', zIndex: 1 }} />
-            <MaterialIcons name="chat-bubble-outline" color={colors.Blue} size={25} style={{ position: 'absolute', right: 10, top: 10, zIndex: 1 }} />
+            <Ionicons name="menu-outline" color={colors.Blue} size={40} style={{ position: 'absolute', zIndex: 1 }}  onPress={() => showAlert()}/>
+            <MaterialIcons name="chat-bubble-outline" color={colors.Blue} size={25} style={{ position: 'absolute', right: 10, top: 10, zIndex: 1 }}  onPress={() => showAlert()}/>
             <ImageCard />
             <View style={styles.container}>
                 <RowButton />

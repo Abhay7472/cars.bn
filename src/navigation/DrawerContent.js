@@ -15,7 +15,9 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AuthContext } from '../model/context';
-
+ import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { colors } from 'react-native-elements';
+ 
 
 export function DrawerContent(props) {
 
@@ -50,8 +52,8 @@ export function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-
-                            label="Post Your car"
+                            label="Post Your car"                       
+                           
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'CreatePost1' })} />
 
                         <DrawerItem

@@ -11,11 +11,13 @@ import PrivacyPolicy from '../DrawerContainer/PrivacyPolicy';
 import RequestStatus from './RequestStatus';
 import MyPostDesign from './NewPostStackScreen/MyPostDesign';
 import TermCondition from '../DrawerContainer/TermCondition';
+import CreatePost1 from './NewPostStackScreen/CreatePost1'
+import CreatePost2 from './NewPostStackScreen/CreatePost2'
+import CreatePost3 from './NewPostStackScreen/CreatePost3'
+import SuccessfullPostCreated from './NewPostStackScreen/SuccessfullPostCreated'
+ 
+
 import { colors } from 'react-native-elements';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-
-
-
 
 
 const DrawerContainer = createStackNavigator();
@@ -43,10 +45,14 @@ const DrawerContainerStack = (props, { navigation }) => (
     <DrawerContainer.Screen name="Payment" component={Payment} options={{ title: 'Payment' }} />
     <DrawerContainer.Screen name="AskAdmin" component={AskAdmin} options={{ title: 'Ask Admin' }} />
     <DrawerContainer.Screen name="Message" component={Message} options={{ title: 'Message' }} />
-    <DrawerContainer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ title: 'PrivacyPolicy' }} />
-    <DrawerContainer.Screen name="RequestStatus" component={RequestStatus} options={{ title: 'RequestStatus' }} />
+    <DrawerContainer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ title: 'Privacy Policy' }} />
+    <DrawerContainer.Screen name="RequestStatus" component={RequestStatus} options={{ title: 'Request Status' }} />
     <DrawerContainer.Screen name="MyPostDesign" component={MyPostDesign} options={{ title: 'MyPostDesign' }} />
-    <DrawerContainer.Screen name="TermCondition" component={TermCondition} options={{ title: 'TermCondition' }} />
+    <DrawerContainer.Screen name="CreatePost1" component={CreatePost1} options={{ title: 'Create Post' }} />
+    <DrawerContainer.Screen name="CreatePost2" component={CreatePost2} options={{ title: 'Create Post' }} />
+    <DrawerContainer.Screen name="CreatePost3" component={CreatePost3} options={{ title: 'Create Post' }} />
+    <DrawerContainer.Screen name="TermCondition" component={TermCondition} options={{ title: 'Term & Condition' }} />
+    <DrawerContainer.Screen name="SuccessfullPostCreated" component={SuccessfullPostCreated} options={{ title: 'Successfull Post Created' }} />
   </DrawerContainer.Navigator>
 );
 

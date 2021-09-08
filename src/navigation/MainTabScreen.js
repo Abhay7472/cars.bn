@@ -2,11 +2,11 @@ import React from 'react';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Profile from '../Screens/ProfileStackScreen/MyProfile'
-import Notification from '../Screens/NotificationStackScreen/Notification'
-import Auction from '../Screens/AuctionStackScreen/Auction'
+import ProfileStack from '../Screens/ProfileStackScreen/ProfileStack'
+import NotificationStack from '../Screens/NotificationStackScreen/NotificationStack'
+import AuctionStack from '../Screens/AuctionStackScreen/AuctionStack'
 import DashBoardStack from '../Screens/DashBoardScreen/DashBoardStack'
-import SavedCar from '../Screens/SavedStackScreen/SavedCar'
+import SavedStack from '../Screens/SavedStackScreen/SavedStack'
 import Colors from '../constants/Colors'
 //import { colors } from 'react-native-elements';
 
@@ -39,7 +39,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Saved Car"
-      component={SavedCar}
+      component={SavedStack}
       options={{
         tabBarLabel: 'SAVED',
         tabBarColor: '#fff',
@@ -51,7 +51,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Notification"
-      component={Notification}
+      component={NotificationStack}
       options={{
         tabBarLabel: 'Notification',
         tabBarColor: '#fff',
@@ -62,7 +62,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="AUCTION"
-      component={Auction}
+      component={AuctionStack}
       options={{
         tabBarLabel: 'AUCTION',
         tabBarColor: '#fff',
@@ -73,7 +73,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Explore"
-      component={Profile}
+      component={ProfileStack}
       options={{
         tabBarLabel: 'Explore',
         tabBarColor: '#fff',

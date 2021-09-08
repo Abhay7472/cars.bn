@@ -1,26 +1,42 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, } from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, } from 'react-native'
 import StepIndicator from 'react-native-step-indicator';
 import { RadioButton, TextInput } from 'react-native-paper';
 import colors from '../../../constants/Colors';
 import images from '../../../constants/Images';
 
 
-const CreatePost1 = ( {navigation: { goBack }} ) => {
+const CreatePost1 = ({ navigation: { goBack } }) => {
     // const [enable, setEnable] = useState(true);
     const [checked, setChecked] = React.useState('first');
+
+
+    const labels = []
+    const customStyles = {
+        separatorStrokeWidth: 2,
+        currentStepIndicatorSize: 30,
+        stepStrokeCurrentColor: 'red',
+        stepStrokeWidth: 3,
+        stepIndicatorCurrentColor: 'red',
+        stepStrokeFinishedColor: 'red',
+        stepStrokeUnFinishedColor: 'grey',
+        separatorUnFinishedColor: 'red',
+        separatorFinishedColor: 'grey',
+        stepIndicatorUnFinishedColor: 'white',
+    }
 
 
     const Detail = () => {
 
         return (
-            <View onPress={() => { }} style={[styles.card,]}>
+            <SafeAreaView onPress={() => { }} style={[styles.card,]}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-between' }}>
                         <RadioButton
                             value="first"
                             status={checked === 'first' ? 'checked' : 'unchecked'}
                             onPress={() => setChecked('first')}
+                            // onPress={()=>navigation.navigate('RentalCar')}
                             color="red"
                         /><Text style={{ color: '#00008b', fontSize: 20 }}> Retail</Text>
                     </View>
@@ -43,51 +59,38 @@ const CreatePost1 = ( {navigation: { goBack }} ) => {
                 </View>
                 <View style={styles.headerWrapper}>
                     <Text style={{ color: "#213884", fontSize: 20 }}> Registration Number </Text>
-                    <TextInput 
+                    <TextInput
                         placeholder="password"
-                        placeholderTextColor = "#666"
+                        placeholderTextColor="#666"
                         style={styles.input}
                         autoCapitalize="none"
                     />
-                </View>             
+                </View>
                 <View style={styles.headerWrapper}>
                     <Text style={{ color: "#213884", fontSize: 20 }}> Current Message </Text>
-                    <TextInput 
+                    <TextInput
                         placeholder="password"
-                        placeholderTextColor = "#666"
+                        placeholderTextColor="#666"
                         style={styles.input}
                         autoCapitalize="none"
-                        onChangeText={(val) => handlepasswordCheckChange(val)}
+                    // onChangeText={(val) => handlepasswordCheckChange(val)}
                     />
                 </View>
                 <TouchableOpacity>
                     <Text style={styles.btn}> Next </Text>
                 </TouchableOpacity>
-            </View>
+            </SafeAreaView>
         )
     }
 
-    const labels = []
-    const customStyles = {
-        separatorStrokeWidth: 2,
-        currentStepIndicatorSize: 30,
-        stepStrokeCurrentColor: 'red',
-        stepStrokeWidth: 3,
-        stepIndicatorCurrentColor: 'red',
-        stepStrokeFinishedColor: 'red',
-        stepStrokeUnFinishedColor: 'grey',
-        separatorUnFinishedColor: 'red',
-        separatorFinishedColor: 'grey',
-        stepIndicatorUnFinishedColor: 'white',
-    }
 
     return (
         <View>
 
             <View style={{ flexDirection: 'row' }}>
-               <TouchableOpacity onPress={()=>goBack('Drawer')}> 
-                   <Image source={images.union} style={styles.img} ></Image>
-               </TouchableOpacity>
+                <TouchableOpacity onPress={() => goBack('Drawer')}>
+                    <Image source={images.union} style={styles.img} ></Image>
+                </TouchableOpacity>
                 <Text style={styles.text}>Create post</Text>
             </View>
             <View style={{ marginTop: 30, marginBottom: 20 }}>
