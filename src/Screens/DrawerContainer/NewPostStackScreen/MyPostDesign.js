@@ -41,6 +41,7 @@ const MyPostDesign = () => {
                     <Text style={styles.paragraph}> 4250km | Automatic</Text>
                     <Text style={[styles.paragraph, { color: "#213884", fontSize: 20 }]}> $ 25000</Text>
                 </View>
+
                 <Modal
                     transparent={true}
                     visible={isModalVisible}
@@ -50,16 +51,16 @@ const MyPostDesign = () => {
                     <ModalPicker
                         changeModalVisibility={changeModalVisibility}
                         setData={setData} />
-                    <View style={{ position: 'absolute' }}>
+
+                    <View style={{ position: 'absolute', zIndex: 1,}}>
                         <View style={{ backgroundColor: '#ffffff', margin: 10, padding: 10, borderRadius: 10, }}>
                             <Text onPress={() => { this.setState({ show: false }) }}
                                 style={{ padding: 10, borderBottomWidth: 1, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-                                <Icon name='edit'
-                                    color="red" /> Edit</Text>
+                                <Icon name='edit'color="red" /> Edit</Text>
+
                             <Text onPress={() => { this.setState({ show: false }) }}
                                 style={{ padding: 10, }}>
-                                <Icon name='delete'
-                                    color="red" /> Delete</Text>
+                                <Icon name='delete'color="red"/> Delete</Text>
                         </View>
                     </View>
                 </Modal>

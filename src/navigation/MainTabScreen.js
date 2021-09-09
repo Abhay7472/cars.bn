@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ProfileStack from '../Screens/ProfileStackScreen/ProfileStack'
 import NotificationStack from '../Screens/NotificationStackScreen/NotificationStack'
 import AuctionStack from '../Screens/AuctionStackScreen/AuctionStack'
-import DashBoardStack from '../Screens/DashBoardScreen/DashBoardStack'
+import HomeStack from '../Screens/HomeStackScreen/HomeStack.js'
 import SavedStack from '../Screens/SavedStackScreen/SavedStack'
 import Colors from '../constants/Colors'
 //import { colors } from 'react-native-elements';
@@ -15,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
   <Tab.Navigator
-    initialRouteName="DashBoardStack"
+    initialRouteName="HomeStack"
     activeColor={Colors.Red}
     inactiveColor={Colors.PrimaryBlue}
     tabBarOptions={{
@@ -27,8 +27,8 @@ const MainTabScreen = () => (
 
   >
     <Tab.Screen
-      name="DashBoardStack"
-      component={DashBoardStack}
+      name="HomeStack"
+      component={HomeStack}
       options={{
         tabBarLabel: 'Home',
         tabBarColor: '#fff',

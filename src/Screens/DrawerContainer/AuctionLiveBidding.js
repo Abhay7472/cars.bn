@@ -6,7 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../constants/Colors';
 
-const AuctionLiveBidding = () => {
+const AuctionLiveBidding = ({ navigation }) => {
 
     const images = [
         "https://source.unsplash.com/1024x768/?nature",
@@ -132,7 +132,8 @@ const AuctionLiveBidding = () => {
                 </View>
 
                 <Text style={styles.black}>Note: 5 days money back guarantee!</Text>
-                <TouchableOpacity style={styles.btn1}>
+                <TouchableOpacity style={styles.btn1}
+                    onPress={() => navigation.navigate('')}>
                     <Text style={styles.text}>Place Bid !</Text>
                 </TouchableOpacity>
             </View>

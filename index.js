@@ -5,9 +5,8 @@
 import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json'; 
-// import EditProfile from './src/Screens/ProfileStackScreen/EditProfile'
- 
-
+// import  ForAuction from './src/Screens/AuctionStackScreen/ForAuction'
+import Calculator from './src/Screens/DrawerContainer/Calculator'
 AppRegistry.registerComponent(appName, () =>App);
 
  //bottom tab headers

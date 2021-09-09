@@ -15,8 +15,10 @@ import CreatePost1 from './NewPostStackScreen/CreatePost1'
 import CreatePost2 from './NewPostStackScreen/CreatePost2'
 import CreatePost3 from './NewPostStackScreen/CreatePost3'
 import SuccessfullPostCreated from './NewPostStackScreen/SuccessfullPostCreated'
- 
-
+import RentalCar from './RentalCar'
+import AuctionLiveBidding from './AuctionLiveBidding';
+import Dashboard from '../DrawerContainer/DashBoard'
+import Color from '../../constants/Colors'
 import { colors } from 'react-native-elements';
 
 
@@ -38,21 +40,25 @@ const DrawerContainerStack = (props, { navigation }) => (
     ),
 
     headerRight: () => (
-      <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Payment')}></Feather.Button>
+      <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
     )
   }}>
 
-    <DrawerContainer.Screen name="Payment" component={Payment} options={{ title: 'Payment' }} />
+    <DrawerContainer.Screen name="Payment" component={Payment} options={{ title: 'Payment', headerTintColor: '#fff', }} />
     <DrawerContainer.Screen name="AskAdmin" component={AskAdmin} options={{ title: 'Ask Admin' }} />
     <DrawerContainer.Screen name="Message" component={Message} options={{ title: 'Message' }} />
     <DrawerContainer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ title: 'Privacy Policy' }} />
     <DrawerContainer.Screen name="RequestStatus" component={RequestStatus} options={{ title: 'Request Status' }} />
-    <DrawerContainer.Screen name="MyPostDesign" component={MyPostDesign} options={{ title: 'MyPostDesign' }} />
+    <DrawerContainer.Screen name="MyPostDesign" component={MyPostDesign} options={{ title: 'My Post' }} />
     <DrawerContainer.Screen name="CreatePost1" component={CreatePost1} options={{ title: 'Create Post' }} />
     <DrawerContainer.Screen name="CreatePost2" component={CreatePost2} options={{ title: 'Create Post' }} />
     <DrawerContainer.Screen name="CreatePost3" component={CreatePost3} options={{ title: 'Create Post' }} />
     <DrawerContainer.Screen name="TermCondition" component={TermCondition} options={{ title: 'Term & Condition' }} />
     <DrawerContainer.Screen name="SuccessfullPostCreated" component={SuccessfullPostCreated} options={{ title: 'Successfull Post Created' }} />
+    <DrawerContainer.Screen name="RentalCar" component={RentalCar} options={{ title: 'Rental Car' }} />
+    <DrawerContainer.Screen name="Dashboard" component={Dashboard} options={{ title: 'Dashboard' }} />
+    <DrawerContainer.Screen name="AuctionLiveBidding" component={AuctionLiveBidding} options={{ title: 'Auction Live Bidding' }} />
+
   </DrawerContainer.Navigator>
 );
 

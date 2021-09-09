@@ -15,9 +15,9 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AuthContext } from '../model/context';
- import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { colors } from 'react-native-elements';
- 
+
 
 export function DrawerContent(props) {
 
@@ -52,8 +52,8 @@ export function DrawerContent(props) {
                                     size={size}
                                 />
                             )}
-                            label="Post Your car"                       
-                           
+                            label="Post Your car"
+
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'CreatePost1' })} />
 
                         <DrawerItem
@@ -135,6 +135,17 @@ export function DrawerContent(props) {
                             )}
                             label="Term & Condition"
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'TermCondition' })}
+                        />
+                            <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon
+                                    name="account-check-outline"
+                                    color={color = "#EA002A"}
+                                    size={size}
+                                />
+                            )}
+                            label="Dash Board"
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen:'DashBoard' })}
                         />
 
                         <DrawerItem

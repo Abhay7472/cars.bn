@@ -18,11 +18,7 @@ const CreatePost3 = ({navigation:{goBack}}) => {
 
     return (
         <ScrollView>
-            <View>
-                <View style={{ flexDirection: 'row' }}>
-                    <Image onPress={()=>goBack('Drawer')} source={images.union} style={styles.img}></Image>
-                    <Text style={styles.text}>Create post</Text>
-                </View>
+            <View>                
                 <Image source={images.carImage} style={{ borderRadius: 40, alignSelf: 'center', width: "95%", marginTop: 20 }} />
                 <View>
                     <View>

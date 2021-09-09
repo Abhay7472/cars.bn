@@ -12,8 +12,6 @@ import SocialLoginScreen from './SocialLoginScreen'
 import RagistrationDealerScreen from './RagistrationDealerScreen'
 
 
-
-
 const RootStack = createStackNavigator();
 
 const RootStackScreen = ({ navigation }) => (

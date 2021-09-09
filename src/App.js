@@ -116,8 +116,8 @@ const App = () => {
       <NavigationContainer>
         {loginState.userToken !== null ? (
           <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-            <Drawer.Screen name="MainTabScreen" component={MainTabScreen} options={{headerShown:false}}/>
-            <Drawer.Screen name="DrawerContainerStack" component={DrawerContainerStack} options={{headerShown:false}} />
+            <Drawer.Screen name="MainTabScreen" component={MainTabScreen} options={{ headerShown: false }} />
+            <Drawer.Screen name="DrawerContainerStack" component={DrawerContainerStack} options={{ headerShown: false }} />
 
           </Drawer.Navigator>
         )
@@ -131,16 +131,3 @@ const App = () => {
 
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-

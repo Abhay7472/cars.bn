@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, SafeAreaView } from 'react-native'
-import { colors } from 'react-native-elements';
-import { ScrollView } from 'react-native-gesture-handler';
+ 
  
 
 const OPTIONS = ['Edit', 'Delete']
@@ -54,8 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
 
     },
-    text: {
-        
+    text: {        
         fontSize: 20,
         fontWeight:'bold'
     }

@@ -22,17 +22,7 @@ const Auction = ({ navigation }) => {
         )
     }
     return (
-          <ScrollView>
-         
-            {/* <View style={{ flexDirection: 'row' }}>
-                <Image source={images.union} style={styles.img}></Image>
-                <Text style={styles.text}>Auction</Text>
-                <Feather
-                    name="message-square"
-                    size={30}
-                    style={{ marginLeft: "55%", paddingTop: 15, color: "#213884" }}
-                />
-            </View> */}
+          <ScrollView>                     
             <Image source={images.carBannerDesign} style={styles.backImage} resizeMode='stretch' />
 
             <View >
@@ -77,13 +67,13 @@ const styles = StyleSheet.create({
 
         width: '90%',
         height: '30%',
-        marginTop: 30,
+        marginTop: 20,
         alignSelf: 'center',
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.9,
         shadowRadius: 10,
-        borderRadius: 20,
+        // borderRadius: 20,
 
     },
 

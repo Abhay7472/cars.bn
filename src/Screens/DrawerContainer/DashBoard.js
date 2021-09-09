@@ -3,7 +3,10 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions,
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import images from '../../constants/Images';
 import Button from '../../components/Button';
+import Colors from '../../constants/Colors'
 
+import {getArticales} from '../../services/Auth'; 
+import { colors } from 'react-native-elements';
 
 const Dashboard = () => {
 
@@ -60,9 +63,9 @@ const Dashboard = () => {
                     <View style={{ flexDirection: 'row', }}>
                         <Image source={images.cardImage} style={{ width: "30%", height: "80%" }} />
                         <View >
-                            <Text style={{ paddingLeft: 10, color: "yellow", fontSize: 15, fontWeight: '500' }}>PENDING ADMIN APPROVAL</Text>
+                            <Text style={{ paddingLeft: 10, color:Colors.PrimaryBlue, fontSize: 18, fontWeight: 'bold' }}>PENDING ADMIN APPROVAL</Text>
                             <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 3 }}> 2018 Toyota C-HR 1.8</Text>
-                            <Text style={{ fontSize: 20, color: 'red', fontWeight: 'bold', paddingLeft: 5 }}>$20500</Text>
+                            <Text style={{ fontSize: 20, color:Colors.Red, fontWeight: 'bold', paddingLeft: 5 }}>$20500</Text>
                             <Text style={{ fontSize: 15, paddingLeft: 5 }}>Automatice | 4 Seater | Sadan</Text>
                             <TouchableOpacity >
                                 <View style={styles.cardBtn}>

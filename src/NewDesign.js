@@ -5,15 +5,15 @@ import StepIndicator from 'react-native-step-indicator';
 import { Picker } from '@react-native-picker/picker';
 import DocumentPicker from 'react-native-document-picker'
 
-import colors from '../../constants/Colors';
-import images from '../../constants/Images';
+import colors from './constants/Colors';
+import images from './constants/Images';
 import { Card, TextInput } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 
 
 
 
-const ForAuction = ({navigation}) => {
+const NewDesign = () => {
 
     const [currentPosition, setCurrentPosition] = useState(2);
     const [pickerValue, setpickerValue] = React.useState('first');
@@ -94,7 +94,7 @@ const ForAuction = ({navigation}) => {
 
                 </View>
                 <View>
-                    <Text style={[styles.dropSownText, { paddingTop: 20, borderTopWidth: 1 ,borderTopLeftRadius:10,borderTopRightRadius:10}]}> Modal  </Text>
+                    <Text style={[styles.dropSownText, { paddingLeft:5,paddingTop: 20, borderTopWidth: 1 ,borderTopLeftRadius:10,borderTopRightRadius:10}]}> Modal  </Text>
                     <Picker
                         style={styles.picker}
                         selectedValue={pickerValue}
@@ -106,7 +106,7 @@ const ForAuction = ({navigation}) => {
 
                 </View>
                 <View>
-                    <Text style={[styles.dropSownText, { paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}> Category  </Text>
+                    <Text style={[styles.dropSownText, { paddingLeft:5,paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}> Category  </Text>
                     <Picker
                         style={styles.picker}
                         selectedValue={pickerValue}
@@ -118,7 +118,7 @@ const ForAuction = ({navigation}) => {
 
                 </View>
                 <View>
-                    <Text style={[styles.dropSownText, { paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}> Rent per Day  </Text>
+                    <Text style={[styles.dropSownText, { paddingLeft:0,paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}>  Starting Amount of Auction </Text>
                     <TextInput style={styles.textInput}></TextInput>
                 </View >
                 <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
@@ -189,7 +189,7 @@ const ForAuction = ({navigation}) => {
                 <Text style={{ paddingLeft: 22, color: colors.PrimaryBlue, fontSize: 15 }}>
                     Get proper photo with 360 angles ?  </Text>
             </View>
-            <TouchableOpacity onPress={()=>navigation.naviigate('')}> 
+            <TouchableOpacity>
                 <Text style={styles.btn}> Next </Text>
             </TouchableOpacity>
         </ScrollView>
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
     dropSownText: {
         color: colors.PrimaryBlue,
         fontSize: 18,
-        paddingLeft: 15
+        paddingLeft: 10
 
     },
     picker: {
@@ -278,7 +278,8 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         backgroundColor: '#fff',
         borderBottomColor: colors.DarkGray3,
-        height: 35
+        height: 35,
+        
     },
     headerWrapper: {
         borderBottomColor: 'grey',
@@ -320,4 +321,4 @@ const styles = StyleSheet.create({
 
 
 
-export default ForAuction;
+export default NewDesign;

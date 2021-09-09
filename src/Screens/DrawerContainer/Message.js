@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const Message = () => {
+const MessageNew = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <Text>message Screen</Text>
+        <Text>MessageNew Screen</Text>
         <Button
           title="Click Here"
           onPress={() => alert('Button Clicked!')}
@@ -13,7 +13,7 @@ const Message = () => {
     );
 };
 
-export default Message;
+export default MessageNew;
 
 const styles = StyleSheet.create({
   container: {

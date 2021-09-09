@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity,
-    Dimensions,
-    StyleSheet,
-    StatusBar,
-    Image,
-    ImageBackground
-} from 'react-native';
+import {View,Text,TouchableOpacity,Dimensions,StyleSheet,StatusBar,Image,ImageBackground} from 'react-native';
 import images from '../../constants/Images';
+
 
 export default class SplashScreen extends Component {
     constructor(props) {
@@ -31,9 +23,6 @@ export default class SplashScreen extends Component {
     };
 }
 
-
-// const { height } = Dimensions.get("screen");
-// const height_logo = height * 0.28;
 
 const styles = StyleSheet.create({
     container: {

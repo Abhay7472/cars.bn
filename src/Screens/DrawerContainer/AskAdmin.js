@@ -84,7 +84,7 @@ const AskAdmin = ({navigation:{goBack}}) => {
                 <Image style={styles.img} source={images.carLogo} />
             </View>
             <View style={styles.lower}>
-                <TouchableOpacity onPress={()=>goBack()}><Ionicons name="chevron-back" color="#1f3d7a" size={35} /></TouchableOpacity>
+                <TouchableOpacity onPress={()=>goBack('Drawer')}><Ionicons name="chevron-back" color="#1f3d7a" size={35} /></TouchableOpacity>
                 <Text style={styles.heading}>CarsBN</Text>
 
                 <Card1 />
