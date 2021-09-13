@@ -4,13 +4,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import Colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
-const SavedCar = () => {
+const SavedCar = ({navigation}) => {
 
     const [like, setLike] = useState(false)
 
     const data1 = [
-        { model: '2018 Toyota C HR 1.8', paragraph: '4250 km | Automatic',  price: '25000$', calculator: true, badges: true, warranty: true, threedays: true},
-        { model: "BMW", paragraph: '4250 km | Automatic', price: '25000$', calculator: false, badges: true, warranty: false, threedays: false}
+        { model: '2018 Toyota C HR 1.8', paragraph: '4250 km | Automatic',  price: '$ 25000', calculator: true, badges: true, warranty: true, threedays: true},
+        { model: "BMW", paragraph: '4250 km | Automatic', price: '$ 25000', calculator: false, badges: true, warranty: false, threedays: false}
     ]
 
     const Renderitems1 = ({ item }) => {
@@ -35,7 +35,10 @@ const SavedCar = () => {
                     <Text style={styles.paragraph}> {item.paragraph}</Text>
                     <View style={styles.row}>
                         <Text style={styles.Blue}> {item.price}</Text>
-                        {item.calculator? <Image style={styles.calculator} source={images.icon19}/> : null}
+                        {item.calculator?
+                        <TouchableOpacity  onPress={()=>navigation.navigate('Calculator')}>
+                            <Image style={styles.calculator} source={images.icon19}/>
+                        </TouchableOpacity>  : null}
                     </View>
                 </View>
             </View>
@@ -48,16 +51,16 @@ const SavedCar = () => {
         <ScrollView>
             <View>
                 <Text style={styles.text}> New</Text>
-                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1} keyExtractor={item => item.title} />
+                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1}   />
 
                 <Text style={styles.text}>Used</Text>
-                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1} keyExtractor={item => item.title} />
+                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1}   />
                
                 <Text style={styles.text}>Rent</Text>
-                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1} keyExtractor={item => item.title} />
+                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1}   />
 
                 <Text style={styles.text}>Auction</Text>
-                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1} keyExtractor={item => item.title} />
+                <FlatList horizontal showsHorizontalScrollIndicator={false} data={data1} renderItem={Renderitems1}   />
 
             </View>
         </ScrollView>
@@ -136,6 +139,7 @@ const styles = StyleSheet.create({
     },
     calculator:{
         marginLeft: Dimensions.get('screen').width / 4 * 1,
+         
     },
     stemp1:{
         height: 25,

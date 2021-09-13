@@ -25,58 +25,12 @@ const CreatePost1 = ({ navigation }) => {
     }
 
 
-    const Detail = () => {
+    // const Detail = () => {
 
-        return (
-            <SafeAreaView style={[styles.card,]}>
-                <View style={{ flexDirection: 'row', }}>
-                    <RadioButton
-                        value="first"
-                        status={checked === 'first' ? 'checked' : 'unchecked'}
-                        onPress={() => setChecked('first')}
-                        onPress={() => navigation.navigate('RentalCar')}
-                        color="red"
-                    /><Text style={{ color: '#00008b', fontSize: 20, paddingTop: 5, paddingRight: 10 }}> Retail</Text>
-                    <RadioButton
-                        value="Second"
-                        status={checked === 'Second' ? 'checked' : 'unchecked'}
-                        onPress={() => setChecked('Second')}
-                        // onPress={()=>navigation.navigate('RentalCar')}
-                        color="red"
-                    /><Text style={{ color: '#00008b', fontSize: 20, paddingTop: 5, paddingRight: 10 }}> Sell</Text>
-                    <RadioButton
-                        value="Third"
-                        status={checked === 'Third' ? 'checked' : 'unchecked'}
-                        onPress={() => setChecked('Third')}
-                        onPress={() => navigation.navigate('AuctionLiveBidding')}
-                        color="red"
-                    /><Text style={{ color: '#00008b', paddingTop: 3, fontSize: 20 }}> Auction</Text>
-                </View>
-                <View>
-                    <Text style={{ color: "#213884", paddingTop: 10, fontSize: 20 }}> Registration Number </Text>
-                    <TextInput
-                        placeholder="Number"
-                        placeholderTextColor={Colors.PrimaryBlue}
-                        style={styles.input}
-                        autoCapitalize="none"
-                    />
-                    <View>
-                        <Text style={{ color: "#213884", fontSize: 20, paddingTop: 10, paddingBottom: 5 }}> Current Message </Text>
-                        <TextInput
-                            placeholder="Number"
-                            placeholderTextColor={Colors.PrimaryBlue}
-                            style={[styles.input,{}]}
-                            autoCapitalize="none"
-                           // style={{ backgroundColor: "pink" }}
-                        />
-                        <TouchableOpacity >
-                            <Text style={styles.btn}> Next </Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>               
-            </SafeAreaView>
-        )
-    }
+    //     return (
+            
+    //     )
+    // }
 
 
     return (
@@ -88,7 +42,56 @@ const CreatePost1 = ({ navigation }) => {
                     labels={labels}
                     stepCount="3" />
                 <ImageBackground source={images.carImage} style={{ height: '70%', marginTop: 20, width: "100%" }}>
-                    <Detail />
+                <View style={[styles.card,]}>
+                <View style={{ flexDirection: 'row', }}>
+                    <RadioButton
+                        value="first"
+                        status={checked === 'first' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('first')}
+                        onPress={() => navigation.navigate('ForAuction')}
+                        color="red"
+                    /><Text style={{ color: '#00008b', fontSize: 20, paddingTop: 5, paddingRight: 10 }}> Retail</Text>
+                    <RadioButton
+                        value="Second"
+                        status={checked === 'Second' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('Second')}
+                        onPress={()=>navigation.navigate('CreatePostPrice')}
+                        color="red"
+                    /><Text style={{ color: '#00008b', fontSize: 20, paddingTop: 5, paddingRight: 10 }}> Sell</Text>
+                    <RadioButton
+                        value="Third"
+                        status={checked === 'Third' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('Third')}
+                        onPress={() => navigation.navigate('CreatePostAuction')}
+                        color="red"
+                    /><Text style={{ color: '#00008b', paddingTop: 3, fontSize: 20 }}> Auction</Text>
+                </View>
+                <View>
+                    <Text style={{ color: "#213884", paddingTop: 10, fontSize: 20 }}> Registration Number </Text>
+                    <TextInput
+                        placeholder="Number"
+                        placeholderTextColor={Colors.PrimaryBlue}
+                        style={styles.input}
+                        autoCapitalize="none"
+                    />
+                    
+            
+                   
+                        <Text style={{ color: "#213884", fontSize: 20, paddingTop: 10, paddingBottom: 5 }}> Current Message </Text>
+                        <TextInput
+                            placeholder="Number"
+                            placeholderTextColor={Colors.PrimaryBlue}
+                            style={[styles.input,{}]}
+                            autoCapitalize="none"
+                           // style={{ backgroundColor: "pink" }}
+                        />
+                        <TouchableOpacity >
+                            <Text style={styles.btn}> Next </Text>
+                        </TouchableOpacity>
+                 
+                    
+                </View>               
+         </View>
                 </ImageBackground>
             </View>
         </SafeAreaView>

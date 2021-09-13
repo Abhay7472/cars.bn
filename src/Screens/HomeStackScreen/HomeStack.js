@@ -1,7 +1,11 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Feather from 'react-native-vector-icons/Feather';
- import Home from './Home';
+import Home from './Home';
+import NewCar from './NewCar';
+import OldCar from './OldCar';
+import AuctionLive from './AuctionLive'
+import RentalCar from './RentalCar';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const HomeStack = createStackNavigator();
@@ -27,6 +31,10 @@ const HomeStackScreen = (props, { route, navigation }) => (
     }}>
 
         <HomeStack.Screen name="Home" component={Home} options={{ title: 'Home', headerShown: true }} />
+        <HomeStack.Screen name="NewCar" component={NewCar} options={{ title: 'New Car', headerShown: true }} />
+        <HomeStack.Screen name="OldCar" component={OldCar} options={{ title: 'Old Car', headerShown: true }} />
+        <HomeStack.Screen name="AuctionLive" component={AuctionLive} options={{ title: 'Auction Live', headerShown: true }} />
+        <HomeStack.Screen name="RentalCar" component={RentalCar} options={{ title: 'Rental Car', headerShown: true }} />
 
 
     </HomeStack.Navigator>

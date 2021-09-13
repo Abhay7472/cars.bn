@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
-import { View, Text, StyleSheet, Image} from 'react-native';
-import SwitchButton from 'switch-button-react-native'; 
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import SwitchButton from 'switch-button-react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
 
-const Calculator =()=>{
+const Calculator = () => {
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => {
         setIsEnabled(previousState => !previousState)
     }
 
-    return(
+    return (
         <View style={styles.main}>
 
             <View style={styles.row}>
@@ -28,38 +28,38 @@ const Calculator =()=>{
             </View>
 
             <View style={styles.row2}>
-                <Text style= {styles.grey}>Finance Type</Text> 
-                    <SwitchButton
-                        onValueChange={(val) => setIsEnabled(true)}      
-                        text1 = 'PCP'                        
-                        text2 = 'HP'                       
-                        switchWidth = {100}                 
-                        switchHeight = {30}                 
-                        switchdirection = 'rtl'             
-                        switchBorderRadius = {100}          
-                        switchSpeedChange = {300}           
-                        switchBorderColor = '#d4d4d4'       
-                        switchBackgroundColor = '#fff'      
-                        btnBorderColor = {Colors.Blue}       
-                        btnBackgroundColor = 'white'      
-                        fontColor = '#b1b1b1'               
-                        activeFontColor = {Colors.Blue}            
-                    />
+                <Text style={styles.grey}>Finance Type</Text>
+                <SwitchButton
+                    onValueChange={(val) => setIsEnabled(true)}
+                    text1='PCP'
+                    text2='HP'
+                    switchWidth={100}
+                    switchHeight={30}
+                    switchdirection='rtl'
+                    switchBorderRadius={100}
+                    switchSpeedChange={300}
+                    switchBorderColor='#d4d4d4'
+                    switchBackgroundColor='#fff'
+                    btnBorderColor={Colors.Blue}
+                    btnBackgroundColor='white'
+                    fontColor='#b1b1b1'
+                    activeFontColor={Colors.Blue}
+                />
             </View>
             <View style={styles.row2}>
-                <Text style= {styles.grey}>Finance types explained</Text>
-                <AntDesign name="arrowright" color={Colors.LightGrey} size={30}/>
+                <Text style={styles.grey}>Finance types explained</Text>
+                <AntDesign name="arrowright" color={Colors.LightGrey} size={30} />
             </View>
             <View style={styles.row2}>
-                <Text style= {styles.grey}>I have a cash deposite of</Text>
+                <Text style={styles.grey}>I have a cash deposite of</Text>
                 <Text style={styles.red}>$1000</Text>
             </View>
             <View style={styles.row2}>
-                <Text style= {styles.grey}>I'd ike to repay over</Text>
+                <Text style={styles.grey}>I'd ike to repay over</Text>
                 <Text style={styles.red}>$500</Text>
             </View>
             <View style={styles.row2}>
-                <Text style= {styles.grey}>My annual mileage is</Text>
+                <Text style={styles.grey}>My annual mileage is</Text>
                 <Text style={styles.red}>10,000 miles</Text>
             </View>
 
@@ -70,37 +70,37 @@ const Calculator =()=>{
 
             <View style={styles.row2}>
                 <View style={styles.row}>
-                    <AntDesign name="plus" size={20} color={Colors.Blue}/>
-                    <Text style= {styles.grey}>I'd ike to repay over</Text>
+                    <AntDesign name="plus" size={20} color={Colors.Blue} />
+                    <Text style={styles.grey}>I'd ike to repay over</Text>
                 </View>
                 <Text style={styles.black}>$176.16</Text>
             </View>
             <View style={styles.row2}>
                 <View style={styles.row}>
-                    <AntDesign name="plus" size={20} color={Colors.Blue}/>
-                    <Text style= {styles.grey}>46 monthly payments</Text>
+                    <AntDesign name="plus" size={20} color={Colors.Blue} />
+                    <Text style={styles.grey}>46 monthly payments</Text>
                 </View>
                 <Text style={styles.black}>$176.16</Text>
             </View>
             <View style={styles.row2}>
                 <View style={styles.row}>
-                    <AntDesign name="plus" size={20} color={Colors.Blue}/>
-                    <Text style= {styles.grey}>Lorem Ipsum</Text>
+                    <AntDesign name="plus" size={20} color={Colors.Blue} />
+                    <Text style={styles.grey}>Lorem Ipsum</Text>
                 </View>
                 <Text style={styles.black}>$176.16</Text>
             </View>
-            <View style={[styles.row, {justifyContent: 'space-between'}]}>
-                <Text style= {styles.bluebig}>Total Amount</Text>
+            <View style={[styles.row, { justifyContent: 'space-between' }]}>
+                <Text style={styles.bluebig}>Total Amount</Text>
                 <Text style={styles.bluebig}>$25,000</Text>
             </View>
-            
+
 
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    main:{
+    main: {
         flex: 1,
         padding: 7
     },
@@ -109,39 +109,39 @@ const styles = StyleSheet.create({
         width: '40%',
         borderRadius: 10
     },
-    row:{
+    row: {
         justifyContent: 'flex-start',
         flexDirection: 'row',
         alignItems: 'center'
     },
-    row2:{
+    row2: {
         justifyContent: 'space-between',
         flexDirection: 'row',
         borderBottomColor: "darkgrey",
         borderBottomWidth: 1,
         alignItems: 'center'
     },
-    bluebig:{
+    bluebig: {
         color: Colors.Blue,
         fontSize: 20,
         fontFamily: 'sans-serif-medium',
     },
-    bluesmall:{
+    bluesmall: {
         color: Colors.Blue,
         fontSize: 10,
         fontFamily: 'sans-serif-medium',
     },
-    black:{
+    black: {
         color: 'black',
         fontSize: 15,
         fontFamily: 'sans-serif-medium',
     },
-    right:{
+    right: {
         marginLeft: 10,
         alignSelf: 'center',
         marginBottom: 10
     },
-    grey:{
+    grey: {
         color: Colors.LightGrey,
         marginTop: 15,
         paddingBottom: 15,
@@ -149,24 +149,24 @@ const styles = StyleSheet.create({
     },
     rightshift: {
         flex: 1,
-        alignItems: 'flex-end', 
+        alignItems: 'flex-end',
         justifyContent: 'center'
     },
-    red:{
+    red: {
         color: Colors.Red,
         fontSize: 15,
         fontFamily: 'sans-serif-medium',
     },
-    black:{
+    black: {
         color: 'black',
         fontSize: 17,
         fontFamily: 'sans-serif-medium',
     },
-    center:{
+    center: {
         alignItems: 'center',
         marginTop: 20
     },
-    greysmall:{
+    greysmall: {
         color: Colors.LightGrey,
         fontSize: 12,
         fontFamily: 'sans-serif-medium',

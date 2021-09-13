@@ -2,12 +2,14 @@ import React from 'react';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import ProfileStack from '../Screens/ProfileStackScreen/ProfileStack'
 import NotificationStack from '../Screens/NotificationStackScreen/NotificationStack'
 import AuctionStack from '../Screens/AuctionStackScreen/AuctionStack'
 import HomeStack from '../Screens/HomeStackScreen/HomeStack.js'
 import SavedStack from '../Screens/SavedStackScreen/SavedStack'
 import Colors from '../constants/Colors'
+
 //import { colors } from 'react-native-elements';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -67,7 +69,7 @@ const MainTabScreen = () => (
         tabBarLabel: 'AUCTION',
         tabBarColor: '#fff',
         tabBarIcon: ({ color }) => (
-          <Icon name="hammer-outline" color={color} size={26} />
+          <MaterialIcons name="gavel" color={color} size={26} />
         ),
       }}
     />
@@ -75,7 +77,7 @@ const MainTabScreen = () => (
       name="Explore"
       component={ProfileStack}
       options={{
-        tabBarLabel: 'Explore',
+        tabBarLabel: 'More',
         tabBarColor: '#fff',
         tabBarIcon: ({ color }) => (
           <Icon name="person" color={color} size={26} />

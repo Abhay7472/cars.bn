@@ -5,12 +5,12 @@ import StepIndicator from 'react-native-step-indicator';
 import { Picker } from '@react-native-picker/picker';
 import DocumentPicker from 'react-native-document-picker'
 
-import colors from '../../constants/Colors';
-import images from '../../constants/Images';
+import colors from '../../../constants/Colors';
+import images from '../../../constants/Images';
 import { Card, TextInput } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 
-
+//create post rebt per day 
 
 
 const ForAuction = ({navigation}) => {
@@ -68,11 +68,7 @@ const ForAuction = ({navigation}) => {
 
 
     return (
-        <ScrollView>
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={images.union} style={styles.img}></Image>
-                <Text style={styles.text}>Create post</Text>
-            </View>
+        <ScrollView>             
 
             <View style={styles.indicatorContainer}>
                 <StepIndicator

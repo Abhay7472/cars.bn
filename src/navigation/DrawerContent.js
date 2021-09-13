@@ -42,8 +42,20 @@ export function DrawerContent(props) {
                         </View>
 
                     </View>
-
                     <Drawer.Section style={styles.drawerSection}>
+
+                        <DrawerItem
+                            icon={({ color, size }) => (
+                                <Icon
+                                    name="account-check-outline"
+                                    color={color = "#EA002A"}
+                                    size={size}
+                                />
+                            )}
+                            label="Dash Board"
+                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'Dashboard' })}
+                        />
+
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
@@ -136,18 +148,6 @@ export function DrawerContent(props) {
                             label="Term & Condition"
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'TermCondition' })}
                         />
-                            <DrawerItem
-                            icon={({ color, size }) => (
-                                <Icon
-                                    name="account-check-outline"
-                                    color={color = "#EA002A"}
-                                    size={size}
-                                />
-                            )}
-                            label="Dash Board"
-                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen:'DashBoard' })}
-                        />
-
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon

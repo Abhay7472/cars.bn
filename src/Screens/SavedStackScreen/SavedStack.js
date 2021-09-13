@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SavedCar from './SavedCar'
+import Calculator from './Calculator'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
@@ -29,7 +30,8 @@ const SavedStackScreen = (props, { route, navigation }) => (
         )
     }}>
 
-        <SavedStack.Screen name="SavedCar" component={SavedCar} options={{ title: 'SavedCar', }} />
+        <SavedStack.Screen name="SavedCar" component={SavedCar} options={{ title: 'Saved Car', }} />
+        <SavedStack.Screen name="Calculator" component={Calculator} options={{ title: 'Calculator', }} />
 
 
     </SavedStack.Navigator>

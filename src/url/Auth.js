@@ -1,4 +1,4 @@
-import {artical_url, _api_key, category,country_coad} from '../Config/rest.consfig';
+import {artical_url, _api_key, category,country_coad} from '../url/rest.consfig';
 
 export async function getArticales(){
     try{

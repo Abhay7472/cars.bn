@@ -90,28 +90,28 @@ const Home = ({ navigation }) => {
             <View style={styles.row}>
                 <View >
                     <TouchableOpacity style={styles.blueButton}
-                        onPress={() => navigation.navigate('')}>
+                        onPress={() => navigation.navigate('NewCar')}>
                         <AntDesign name="star" color="white" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>New</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.orangeButton}
-                        onPress={() => navigation.navigate('')}>
+                        onPress={() => navigation.navigate('OldCar')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Used</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.redButton}
-                        onPress={() => navigation.navigate('')}>
+                        onPress={() => navigation.navigate('RentalCar')}>
                         <Entypo name="key" color="#fff" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Rent</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.purpleButton}
-                        onPress={() => navigation.navigate(' ')}>
+                        onPress={() => navigation.navigate('AuctionLive')}>
                         <FontAwesome name="thumbs-up" color="white" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Auction</Text>

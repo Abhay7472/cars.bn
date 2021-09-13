@@ -28,7 +28,7 @@ const ProfileStackScreen = (props,{route,navigation}) => (
             <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Payment')}></Feather.Button>
         )
     }}>
-         <ProfileStack.Screen name="EditScreen" component={EditScreen} options={{title:'EditProfile',headerShown:true}} />
+         <ProfileStack.Screen name="EditScreen" component={EditScreen} options={{title:'Edit Profile',headerShown:true}} />
         <ProfileStack.Screen name="MyProfile" component={MyProfile} options={{title:'My Profile',headerShown:true}} />
        
 

@@ -15,9 +15,11 @@ import CreatePost1 from './NewPostStackScreen/CreatePost1'
 import CreatePost2 from './NewPostStackScreen/CreatePost2'
 import CreatePost3 from './NewPostStackScreen/CreatePost3'
 import SuccessfullPostCreated from './NewPostStackScreen/SuccessfullPostCreated'
-import RentalCar from './RentalCar'
+import ForAuction from './NewPostStackScreen/ForAuction';
+import CreatePostPrice from './NewPostStackScreen/CreatePostPrice';
 import AuctionLiveBidding from './AuctionLiveBidding';
 import Dashboard from '../DrawerContainer/DashBoard'
+import CreatePostAuction from './NewPostStackScreen/CreatePostAuction';
 import Color from '../../constants/Colors'
 import { colors } from 'react-native-elements';
 
@@ -39,9 +41,9 @@ const DrawerContainerStack = (props, { navigation }) => (
       <Icon.Button name="ios-menu" size={25} backgroundColor="white" color='#213884' onPress={() => props.navigation.openDrawer()}></Icon.Button>
     ),
 
-    headerRight: () => (
-      <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
-    )
+    // headerRight: () => (
+    //   <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
+    // )
   }}>
 
     <DrawerContainer.Screen name="Payment" component={Payment} options={{ title: 'Payment', headerTintColor: '#fff', }} />
@@ -55,9 +57,11 @@ const DrawerContainerStack = (props, { navigation }) => (
     <DrawerContainer.Screen name="CreatePost3" component={CreatePost3} options={{ title: 'Create Post' }} />
     <DrawerContainer.Screen name="TermCondition" component={TermCondition} options={{ title: 'Term & Condition' }} />
     <DrawerContainer.Screen name="SuccessfullPostCreated" component={SuccessfullPostCreated} options={{ title: 'Successfull Post Created' }} />
-    <DrawerContainer.Screen name="RentalCar" component={RentalCar} options={{ title: 'Rental Car' }} />
+    <DrawerContainer.Screen name="ForAuction" component={ForAuction} options={{ title: ' For Auction' }} />
     <DrawerContainer.Screen name="Dashboard" component={Dashboard} options={{ title: 'Dashboard' }} />
     <DrawerContainer.Screen name="AuctionLiveBidding" component={AuctionLiveBidding} options={{ title: 'Auction Live Bidding' }} />
+    <DrawerContainer.Screen name="CreatePostPrice" component={CreatePostPrice} options={{ title: 'Create Post Price' }} />
+    <DrawerContainer.Screen name="CreatePostAuction" component={CreatePostAuction} options={{ title:  'Auction' }} />
 
   </DrawerContainer.Navigator>
 );

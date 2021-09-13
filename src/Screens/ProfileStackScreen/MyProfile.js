@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Switch, ScrollView} from 'react-native';
+import { colors } from 'react-native-elements';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../constants/Colors';
 
@@ -98,7 +99,8 @@ const MyProfile =()=>{
 const styles = StyleSheet.create({
     main:{
         flex:1,
-        padding: 10
+        padding: 10,
+        backgroundColor:colors.white
     },
     row:{
         flexDirection: 'row',

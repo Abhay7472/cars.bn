@@ -5,15 +5,15 @@ import StepIndicator from 'react-native-step-indicator';
 import { Picker } from '@react-native-picker/picker';
 import DocumentPicker from 'react-native-document-picker'
 
-import colors from './constants/Colors';
-import images from './constants/Images';
+import colors from '../../../constants/Colors';
+import images from '../../../constants/Images';
 import { Card, TextInput } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 
+//price
 
 
-
-const NewDesign = () => {
+const CreatePostPrice = () => {
 
     const [currentPosition, setCurrentPosition] = useState(2);
     const [pickerValue, setpickerValue] = React.useState('first');
@@ -68,11 +68,7 @@ const NewDesign = () => {
 
 
     return (
-        <ScrollView>
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={images.union} style={styles.img}></Image>
-                <Text style={styles.text}>Create post</Text>
-            </View>
+        <ScrollView>          
 
             <View style={styles.indicatorContainer}>
                 <StepIndicator
@@ -118,7 +114,7 @@ const NewDesign = () => {
 
                 </View>
                 <View>
-                    <Text style={[styles.dropSownText, { paddingLeft:0,paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}>  Starting Amount of Auction </Text>
+                    <Text style={[styles.dropSownText, { paddingLeft:0,paddingTop: 20, borderTopWidth: 1,borderTopLeftRadius:10,borderTopRightRadius:10 }]}> Price </Text>
                     <TextInput style={styles.textInput}></TextInput>
                 </View >
                 <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
@@ -321,4 +317,4 @@ const styles = StyleSheet.create({
 
 
 
-export default NewDesign;
+export default CreatePostPrice;
