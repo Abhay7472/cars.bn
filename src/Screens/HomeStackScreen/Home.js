@@ -103,6 +103,13 @@ const Home = ({ navigation }) => {
                     <Text style={styles.btntext}>Used</Text>
                 </View>
                 <View>
+                    <TouchableOpacity style={styles.brownButton}
+                        onPress={() => navigation.navigate('')}>
+                        <EvilIcons name="refresh" color="white" size={45} />
+                    </TouchableOpacity>
+                    <Text style={styles.btntext}>Sell</Text>
+                </View>
+                <View>
                     <TouchableOpacity style={styles.redButton}
                         onPress={() => navigation.navigate('RentalCar')}>
                         <Entypo name="key" color="#fff" size={25} />
@@ -200,7 +207,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
         marginTop: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
+      
     },
     ImageComponentStyle: {
         width: '100%',
@@ -210,7 +218,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 30,
-        marginHorizontal: 10
+        // marginHorizontal: 10
     },
     blueButton: {
         backgroundColor: 'skyblue',
@@ -218,7 +226,9 @@ const styles = StyleSheet.create({
         width: 70,
         borderRadius: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight:7
+        
     },
     orangeButton: {
         backgroundColor: 'orange',
@@ -226,7 +236,8 @@ const styles = StyleSheet.create({
         width: 70,
         borderRadius: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight:7
     },
     redButton: {
         backgroundColor: colors.Red,
@@ -234,7 +245,17 @@ const styles = StyleSheet.create({
         width: 70,
         borderRadius: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight:7
+    },
+    brownButton: {
+        backgroundColor: colors.PrimaryBlue,
+        height: 70,
+        width: 70,
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight:7
     },
     purpleButton: {
         backgroundColor: 'purple',
@@ -242,7 +263,8 @@ const styles = StyleSheet.create({
         width: 70,
         borderRadius: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight:10
     },
     btntext: {
         color: 'black',

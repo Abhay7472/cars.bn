@@ -248,8 +248,7 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        justifyContent: 'center',
-         
+        justifyContent: 'center',         
     },
     footer: {
         flex: 1,

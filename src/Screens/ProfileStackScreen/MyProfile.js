@@ -4,7 +4,7 @@ import { colors } from 'react-native-elements';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../constants/Colors';
 
-const MyProfile =()=>{
+const MyProfile =({navigation})=>{
 
     const [isEnabled1, setIsEnabled1] = useState(false);
     const [isEnabled2, setIsEnabled2] = useState(false);
@@ -28,7 +28,9 @@ const MyProfile =()=>{
                         </TouchableOpacity>
                     </View>
                 </View>
+                <TouchableOpacity onPress={()=>navigation.navigate('EditScreen')}>
                 <Image style={styles.icon} source={require("../../assets/ic_border_color_24px.png")} />
+                </TouchableOpacity>
             </View>
         )
     }

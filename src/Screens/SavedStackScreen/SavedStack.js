@@ -26,7 +26,7 @@ const SavedStackScreen = (props, { route, navigation }) => (
         ),
 
         headerRight: () => (
-            <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Payment')}></Feather.Button>
+            <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
         )
     }}>
 

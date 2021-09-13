@@ -4,11 +4,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import images from '../../constants/Images';
 import Button from '../../components/Button';
 import Colors from '../../constants/Colors'
+ 
 
-import {getArticales} from '../../services/Auth'; 
-import { colors } from 'react-native-elements';
-
-const Dashboard = () => {
+const Dashboard = ({navigation}) => {
 
     const data1 = [
         { title: '2018 Toyota C HR 1.8', paragraph: 'Automatic | 4Seater | Sadan', body: 'Lodon Ispum is simple domy Text' },
@@ -100,7 +98,7 @@ const Dashboard = () => {
                                 <TouchableOpacity>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#FFC53E", paddingLeft: 30, paddingRight: 30, marginLeft: 10, marginRight: 10 }]}>Boost</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=>navigation.navigate('RequestStatus')}>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#73C5ED", paddingLeft: 20, paddingRight: 20 }]}>INSPECTION</Text>
                                 </TouchableOpacity>
                             </View>
@@ -108,13 +106,13 @@ const Dashboard = () => {
 
                             <View style={{ flexDirection: 'row' }}>
                                 <TouchableOpacity style={{ paddingTop: 10 }}>
-                                    <Text style={[styles.colorbtn, { backgroundColor: "#EA0787", marginLeft: 5, marginRight: 5 }]}>Boost</Text>
+                                    <Text style={[styles.colorbtn, { backgroundColor: "#EA0787", marginLeft: 5, marginRight: 5 }]}>Get 360</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={{ paddingTop: 10 }}>
-                                    <Text style={[styles.colorbtn, { backgroundColor: "#F2E646", marginLeft: 5, marginRight: 5 }]}>Boost</Text>
+                                    <Text style={[styles.colorbtn, { backgroundColor: "#F2E646", marginLeft: 5, marginRight: 5 }]}>Quick Sell</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={{ paddingTop: 10 }}>
-                                    <Text style={[styles.colorbtn, { backgroundColor: "#F68D1B", marginRight: 10 }]}>Boost</Text>
+                                    <Text style={[styles.colorbtn, { backgroundColor: "#F68D1B",  }]}>Promote</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -168,13 +166,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#213884",
         color: 'white',
         borderRadius: 40,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 13,
+        paddingRight: 13,
         paddingBottom: 10,
         paddingTop: 10,
         fontWeight: 'bold',
         alignSelf: 'center',
-        fontSize: 15
+        fontSize: 13,
+        
     },
 
     card: {

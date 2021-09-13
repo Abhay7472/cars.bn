@@ -81,7 +81,7 @@ export function DrawerContent(props) {
                         //onPress={() => props.navigation.navigate('', { screen: 'MyPostDesign' })}
                         />
 
-                        <DrawerItem
+                        {/* <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="alert-box-outline"
@@ -91,7 +91,7 @@ export function DrawerContent(props) {
                             )}
                             label="Request Status"
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'RequestStatus' })}
-                        />
+                        /> */}
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
