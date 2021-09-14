@@ -90,35 +90,35 @@ const Home = ({ navigation }) => {
             <View style={styles.row}>
                 <View >
                     <TouchableOpacity style={styles.blueButton}
-                        onPress={() => navigation.navigate('NewCar')}>
+                        onPress={() => navigation.navigate('New')}>
                         <AntDesign name="star" color="white" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>New</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.orangeButton}
-                        onPress={() => navigation.navigate('OldCar')}>
+                        onPress={() => navigation.navigate('New')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Used</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.brownButton}
-                        onPress={() => navigation.navigate('')}>
+                        onPress={() => navigation.navigate('New')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Sell</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.redButton}
-                        onPress={() => navigation.navigate('RentalCar')}>
+                        onPress={() => navigation.navigate('New')}>
                         <Entypo name="key" color="#fff" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Rent</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.purpleButton}
-                        onPress={() => navigation.navigate('AuctionLive')}>
+                        onPress={() => navigation.navigate('New')}>
                         <FontAwesome name="thumbs-up" color="white" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Auction</Text>
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 10,
         overflow: 'hidden',
-      
+
     },
     ImageComponentStyle: {
         width: '100%',
@@ -227,8 +227,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:7
-        
+        marginRight: 7
+
     },
     orangeButton: {
         backgroundColor: 'orange',
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:7
+        marginRight: 7
     },
     redButton: {
         backgroundColor: colors.Red,
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:7
+        marginRight: 7
     },
     brownButton: {
         backgroundColor: colors.PrimaryBlue,
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:7
+        marginRight: 7
     },
     purpleButton: {
         backgroundColor: 'purple',
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight:10
+        marginRight: 10
     },
     btntext: {
         color: 'black',

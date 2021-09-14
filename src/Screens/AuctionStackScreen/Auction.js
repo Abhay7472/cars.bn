@@ -1,11 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView, FlatList } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather'
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import colors from '../../constants/Colors';
 import images from '../../constants/Images';
-
-
 
 const Auction = ({ navigation }) => {
 
@@ -13,7 +8,7 @@ const Auction = ({ navigation }) => {
 
         return (
             <View>
-                <TouchableOpacity onPress={() => { }} style={[styles.card, {flexDirection: 'row' }]}>
+                <TouchableOpacity onPress={() => { }} style={[styles.card, { flexDirection: 'row' }]}>
                     <Image source={images.cardImage} style={{ height: 60, width: 100, resizeMode: 'stretch' }} />
                     <Text style={styles.bigBlueText}
                         style={{ paddingRight: 90, color: "#213884", fontSize: 15 }}>Post Submitted to Admin!</Text>
@@ -21,31 +16,19 @@ const Auction = ({ navigation }) => {
             </View>
         )
     }
+    
     return (
-          <ScrollView>                     
+        <ScrollView>
             <Image source={images.carBannerDesign} style={styles.backImage} resizeMode='stretch' />
-
-            <View >
-                <Text style={{ paddingTop: 30, paddingLeft: 15, fontSize: 20 }}>My Auction</Text>
-                <DropDown />
-            </View>
-
-            <View >
-                <Text style={{ paddingTop: 10, paddingLeft: 15, fontSize: 20 }}>Live</Text>
-                <DropDown />
-            </View>
-
-            <View >
-                <Text style={{ paddingTop: 10, paddingLeft: 15, fontSize: 20 }}>UpComing</Text>
-                <DropDown />
-            </View>
-
-            <View >
-                <Text style={{ paddingTop: 30, paddingLeft: 15, fontSize: 20 }}>Previous</Text>
-                <DropDown />
-            </View>
-         
-         </ScrollView>
+            <Text style={{ paddingTop: 30, paddingLeft: 15, fontSize: 20 }}>My Auction</Text>
+            <DropDown />
+            <Text style={{ paddingTop: 10, paddingLeft: 15, fontSize: 20 }}>Live</Text>
+            <DropDown />
+            <Text style={{ paddingTop: 10, paddingLeft: 15, fontSize: 20 }}>UpComing</Text>
+            <DropDown />
+            <Text style={{ paddingTop: 30, paddingLeft: 15, fontSize: 20 }}>Previous</Text>
+            <DropDown />
+        </ScrollView>
 
     )
 }
@@ -74,9 +57,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.9,
         shadowRadius: 10,
         // borderRadius: 20,
-
     },
-
     card: {
         shadowColor: '#3D3D3D',
         borderRadius: 8,
@@ -86,10 +67,6 @@ const styles = StyleSheet.create({
         marginBottom: 10,
 
     },
-
-
-
-
 })
 export default Auction;
 

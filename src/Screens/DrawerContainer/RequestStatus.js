@@ -26,22 +26,30 @@ const RequestStatus =()=>{
                     <Card style={styles.card} >
 
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginRight: 5 }}>
-                            <Card style={{ backgroundColor: colors.PrimaryBlue, padding: 10, borderRadius: 10, height: 85 }}>
+                          <TouchableOpacity onPress={()=>navigation.navigate('')}>
+                           <Card style={{ backgroundColor: colors.PrimaryBlue, padding: 10, borderRadius: 10, height: 85 }}>
                                 <Image source={images.exterior} />
                                 <Text style={{ color: '#fff' }}>Exterior</Text>
                             </Card>
-                            <Card style={{ backgroundColor: 'lightgrey', padding: 10, borderRadius: 10 }}>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('')}>
+                                <Card style={{ backgroundColor: 'lightgrey', padding: 10, borderRadius: 10 }}>
                                 <Image source={images.carSeat} />
                                 <Text style={{ color: colors.PrimaryBlue }}>Interior</Text>
                             </Card>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('')}>
                             <Card style={{ backgroundColor: 'lightgrey', padding: 10, borderRadius: 10 }}>
                                 <Image source={images.roadtest} />
                                 <Text style={{ color: colors.PrimaryBlue }}>  Road</Text>
                             </Card>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('')}>
                             <Card style={{ backgroundColor: 'lightgrey', padding: 10, borderRadius: 10 }}>
                                 <Image source={images.inspectionCar} />
                                 <Text style={{ color: colors.PrimaryBlue }}>  Body</Text>
                             </Card>
+                            </TouchableOpacity>
                         </View>
 
                         <View style={{ flexDirection: 'row', marginTop: 20 }}>

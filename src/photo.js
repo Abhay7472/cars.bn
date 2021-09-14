@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Button } from "react-native";
 import Colors from './constants/Colors.js'
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 //import DateTimePickerModal from "react-native-modal-datetime-picker";
 import Icon from 'react-native-vector-icons/AntDesign'
 import { SliderBox } from "react-native-image-slider-box";
@@ -15,7 +15,6 @@ const NewDesign = ({ navigation }) => {
         "https://source.unsplash.com/1024x768/?car?",
         "https://source.unsplash.com/1024x768/?bmw",
     ]
-
 
     const ImageCard = () => {
         return (
@@ -40,16 +39,23 @@ const NewDesign = ({ navigation }) => {
         return (
             <View style={styles.card}>
                 <View style={styles.row}>
-                    <Ionicons name="mail" color={"#EA002A"} size={23} />
-                    <Text style={styles.bigBlueText}>info@carsbn.com</Text>
+                    <Text style={styles.bigBlueText}>  Audi</Text>
+                    {/* <TextInput placeholder="Car Name" 
+                     placeholderTextColor={colors.PrimaryBlue}
+                     >  </TextInput> */}
                 </View>
+            </View>
+        )
+    }
+
+    const Card2 = () => {
+        return (
+            <View style={styles.card}>
                 <View style={styles.row}>
-                    <Ionicons name="call" color={"#EA002A"} size={23} />
-                    <Text style={styles.bigBlueText}>+140-212345561</Text>
-                </View>
-                <View style={styles.row}>
-                    <Ionicons name="location-sharp" color={"#EA002A"} size={25} />
-                    <Text style={styles.bigBlueText}>122, Baker Street, Jaipur, Rajasthan</Text>
+                    <Text style={styles.bigBlueText}> Choose a Date for promtion </Text>
+                    <TouchableOpacity>
+                        <AntDesign name="calendar" color={"#EA002A"} size={23} />
+                    </TouchableOpacity>
                 </View>
             </View>
         )
@@ -66,11 +72,10 @@ const NewDesign = ({ navigation }) => {
                 <TextInput style={styles.input} placeholder=" TYPE your message" />
                 <TextInput placeholder="  Enter Amount"
                     placeholderTextColor={Colors.PrimaryBlue}
-                    style={{ margin: 10, borderWidth: 2, alignSelf: 'center', }}>
+                    style={{ margin: 10, borderWidth: 2, alignSelf: 'center', marginTop: 30 }}>
                 </TextInput>
                 <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btntext} >Request For Sponsor</Text>
-
+                    <Text style={styles.btntext} >Request For Promotion</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -78,10 +83,11 @@ const NewDesign = ({ navigation }) => {
 
 
     return (
-        <ScrollView style={styles.main}>
+        <ScrollView >
             <ImageCard />
             <View style={{ marginTop: 20 }}>
                 <Card1 />
+                <Card2 />
                 <Form />
             </View>
 
@@ -136,7 +142,7 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         fontFamily: 'sans-serif-medium',
         alignSelf: 'center'
-    }, 
+    },
     paginationBoxStyle: {
         position: "absolute",
         bottom: 0,
@@ -160,7 +166,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 15
     },
-   
-    
+
+
 
 })
