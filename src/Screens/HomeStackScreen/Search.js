@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Modal, TouchableOpacity, Image, Dimensions, ScrollView, FlatList, TextInput } from 'react-native';
+import { View, Text, StyleSheet,Modal, TouchableOpacity, Image, Dimensions, Switch, ScrollView, FlatList, TextInput } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import SwitchButton from 'switch-button-react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import Colors from '../../constants/Colors'
-import images from '../../constants/Images';
-
+ import Colors from '../../constants/Colors.js'
+ import images from '../../constants/Images.js'
 import { RadioButton } from 'react-native-paper';
 
 const Search = () => {
@@ -13,27 +14,35 @@ const Search = () => {
     const [X, setX] = useState(false)
 
     const [checked, setChecked] = useState('');
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => {
+        setIsEnabled(previousState => !previousState)
+    }
+
+    const [isEnabled2, setIsEnabled2] = useState(false);
+    const toggleSwitch2 = () => setIsEnabled2(previousState => !previousState);
+
 
     const data1 = [
-        { model: '2018 Toyota C HR 1.8', paragraph: '4250 km | Automatic', price: '25000$', calculator: true, badges: true, warranty: true, threedays: true },
-        { model: "BMW", paragraph: '4250 km | Automatic', price: '25000$', calculator: false, badges: true, warranty: false, threedays: false }
+        { model: '2018 Toyota C HR 1.8', paragraph: '4250 km | Automatic',  price: '25000$', calculator: true, badges: true, warranty: true, threedays: true},
+        { model: "BMW", paragraph: '4250 km | Automatic', price: '25000$', calculator: false, badges: true, warranty: false, threedays: false}
     ]
 
     const Renderitems1 = ({ item }) => {
         return (
             <View style={styles.outerbox}>
-
+                
                 <View style={styles.row}>
-                    {item.badges ? <Image style={styles.stemp1} source={images.icon14} /> : null}
-                    {item.warranty ? <Image style={styles.stemp2} source={images.icon15} /> : null}
-                    {item.threedays ? <Image style={styles.stemp3} source={images.icon16} /> : null}
+                    {item.badges? <Image style={styles.stemp1} source={images.icon14}/>: null}
+                    {item.warranty? <Image style={styles.stemp2} source={images.icon15}/>: null}
+                    {item.threedays? <Image style={styles.stemp3} source={images.icon16}/>: null}
                 </View>
 
                 <Image style={styles.image} source={images.car} />
-
-                <TouchableOpacity style={styles.likebutton} onPress={() => { setLike(!like) }}>
-                    {like ? <Image style={styles.like} source={images.icon17} />
-                        : <Image style={styles.like} source={images.icon18} />}
+                
+                <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
+                    {like ? <Image style={styles.like} source={images.icon17}/>
+                    : <Image style={styles.like} source={images.icon18}/> }
                 </TouchableOpacity>
 
                 <View style={styles.innerbox}>
@@ -41,26 +50,26 @@ const Search = () => {
                     <Text style={styles.paragraph}> {item.paragraph}</Text>
                     <View style={styles.row}>
                         <Text style={styles.Blue}> {item.price}</Text>
-                        {item.calculator ? <Image style={styles.calculator} source={images.icon19} /> : null}
+                        {item.calculator? <Image style={styles.calculator} source={images.icon19}/> : null}
                     </View>
                 </View>
             </View>
         )
     }
 
-    const Search = () => {
-        return (
+    const Search=()=>{
+        return(
             <View style={styles.row}>
                 <View style={styles.search}>
                     <View>
-                        <AntDesign name="search1" size={20} color="grey" />
+                        <AntDesign name="search1" size={20} color="grey"/>
                     </View>
-                    <TextInput style={styles.input} />
-
+                        <TextInput style={styles.input}/>
+                    
                     <AntDesign name="closecircle" size={20} color="grey" />
                 </View>
-                <TouchableOpacity style={styles.filter} onPress={() => { setX(true) }}>
-                    <Ionicons name="options-sharp" size={30} color="white" />
+                <TouchableOpacity style={styles.filter} onPress={()=>{setX(true)}}>
+                    <Ionicons name="options-sharp" size={30} color="white"/>
                 </TouchableOpacity>
             </View>
         )
@@ -85,71 +94,158 @@ const Search = () => {
                 <Text style={styles.right}>See more amazing cars</Text>
 
                 <Modal transparent={true} visible={X}>
-                    <View style={styles.modal}>
-                        <Text style={styles.text}>Filter your search</Text>
-                        <View style={styles.wrap}>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.white}>Sedan</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.white}>Sedan</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.white}>Sedan</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.white}>Sedan</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.button}>
-                                <Text style={styles.white}>Sedan</Text>
-                            </TouchableOpacity>
+                    <ScrollView style={styles.modal}>
+                        <TouchableOpacity onPress={()=>{setX(false)}} style={styles.close}>
+                            <Text style={styles.white}>Close</Text>
+                        </TouchableOpacity>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Postcode</Text>
+                            <View style={styles.row2}>
+                                <Text style={styles.green}>NW13QB</Text>
+                                <MaterialCommunityIcons name="target" size={25} color="grey" />
+                            </View>
                         </View>
-                        <Text style={styles.text}>Sort by</Text>
-                        <View style={styles.row}>
-                            <RadioButton
-                                value="first"
-                                status={checked === 'first' ? 'checked' : 'unchecked'}
-                                onPress={() => setChecked('first')}
-                                color={Colors.Blue}
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Distance</Text>
+                            <Text style={styles.green}>National</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Make</Text>
+                            <Text style={styles.green}>ALFA ROMEO</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Modal</Text>
+                            <Text style={styles.green}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Model variant</Text>
+                            <Text style={styles.green}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Price type</Text>
+                            <SwitchButton
+                                onValueChange={(val) => setIsEnabled(true)}      
+                                text1 = 'Finance'                        
+                                text2 = 'Cash'                       
+                                switchWidth = {200}                 
+                                switchHeight = {40}                 
+                                switchdirection = 'rtl'             
+                                switchBorderRadius = {100}          
+                                switchSpeedChange = {300}           
+                                switchBorderColor = '#d4d4d4'       
+                                switchBackgroundColor = '#fff'      
+                                btnBorderColor = {'green'}      
+                                btnBackgroundColor = 'white'      
+                                fontColor = '#b1b1b1'               
+                                activeFontColor = {'green'}      
                             />
-                            <Text style={styles.grey}>Low to High</Text>
                         </View>
-                        <View style={styles.row}>
-                            <RadioButton
-                                value="second"
-                                status={checked === 'second' ? 'checked' : 'unchecked'}
-                                onPress={() => setChecked('second')}
-                                color={Colors.Blue}
+                        <View style={styles.row3}>
+                            <View >
+                                <Text style={styles.Blue}>Price</Text>
+                                <Text style={styles.BlueSmall}>Typical finance parameters: </Text>
+                            </View>
+                            <Text style={styles.green}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Deposit</Text>
+                            <Text style={styles.green}>$ 1000</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Term (months)</Text>
+                            <Text style={styles.green}>48 months</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Mileage (per year)</Text>
+                            <Text style={styles.green}>10,000 miles</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.BlueSmall}>Loess is a sedimentary deposit composed largely of silt-size grains that are loosely cemented by calcium carbonate.</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Year</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Mileage</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Body type</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Fuel type</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Engine size</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Fuel consumption</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Acceleration</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Gearbox</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Drivetrain</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>CO2</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>No. of doors</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Seats</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Insurance group</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Tax</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Colour</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Seller type</Text>
+                            <Text style={styles.grey}>All</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.grey}>CAT C/D</Text>
+                            <Text style={styles.grey}>Exclude Cat S/C/D/N</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Keywords</Text>
+                            <Text style={styles.grey}>e.g. Alarm</Text>
+                        </View>
+                        <View style={styles.row3}>
+                            <Text style={styles.Blue}>Northern Ireland ads only</Text>
+                            <Switch
+                                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                                thumbColor={isEnabled2 ? "#f5dd4b" : "#f4f3f4"}
+                                ios_backgroundColor="#3e3e3e"
+                                onValueChange={toggleSwitch2}
+                                value={isEnabled2}
                             />
-                            <Text style={styles.grey}>High to Low</Text>
                         </View>
-                        <View style={styles.row}>
-                            <RadioButton
-                                value="third"
-                                status={checked === 'third' ? 'checked' : 'unchecked'}
-                                onPress={() => setChecked('third')}
-                                color={Colors.Blue}
-                            />
-                            <Text style={styles.grey}>Popularity</Text>
-                        </View>
-                        <View style={styles.row}>
-                            <RadioButton
-                                value="fourth"
-                                status={checked === 'fourth' ? 'checked' : 'unchecked'}
-                                onPress={() => setChecked('fourth')}
-                                color={Colors.Blue}
-                            />
-                            <Text style={styles.grey}>Lorem Ipsum</Text>
-                        </View>
-                        <View style={styles.row}>
-                            <TouchableOpacity onPress={() => setX(false)} style={styles.btn}>
-                                <Text style={styles.white}>Show Result</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.greybtn}>
-                                <Text style={styles.grey}>Clear</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
+                        
+                    </ScrollView>
                 </Modal>
 
             </View>
@@ -184,18 +280,18 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         marginHorizontal: 10,
         marginTop: 10,
-        flex: 2,
+        flex:2,
     },
     image: {
         height: 100,
         width: '100%',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        flex: 1
+        flex:1
     },
     innerbox: {
         padding: 5,
-        flex: 1,
+        flex:1,
         alignItems: 'flex-start',
     },
     title: {
@@ -206,12 +302,17 @@ const styles = StyleSheet.create({
     paragraph: {
         fontSize: 11
     },
-    Blue: {
+    Blue:{
         color: Colors.Blue,
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'sans-serif-medium',
     },
-    likebutton: {
+    BlueSmall:{
+        color: Colors.Blue,
+        fontSize: 12,
+        fontFamily: 'sans-serif-medium',
+    },
+    likebutton:{
         position: 'absolute',
         height: 50,
         width: 50,
@@ -219,28 +320,27 @@ const styles = StyleSheet.create({
         top: 80,
         left: Dimensions.get('screen').width / 4 * 1.5
     },
-    like: {
+    like:{
         height: '100%',
         width: '100%'
-    },
-    row: {
+    }, 
+    row:{
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
-        marginLeft: 5
-        //justifyContent: 'space-evenly'
+        //justifyContent: 'space-evenly',
+        marginTop:10
     },
-    calculator: {
+    calculator:{
         marginLeft: Dimensions.get('screen').width / 4 * 1,
     },
-    stemp1: {
+    stemp1:{
         height: 25,
         width: 25,
         position: 'absolute',
         zIndex: 1,
         marginLeft: 5,
     },
-    stemp2: {
+    stemp2:{
         height: 25,
         width: 25,
         position: 'absolute',
@@ -248,7 +348,7 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         left: 30
     },
-    stemp3: {
+    stemp3:{
         height: 25,
         width: 25,
         position: 'absolute',
@@ -256,18 +356,18 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         left: 60
     },
-    right: {
+    right:{
         color: Colors.Blue,
         alignSelf: 'flex-end',
         fontSize: 12,
         marginRight: 10
     },
-    filter: {
-        borderRadius: 10,
+    filter:{
+        borderRadius:10,
         padding: 10,
         backgroundColor: Colors.Blue
     },
-    search: {
+    search:{
         borderRadius: 50,
         borderColor: 'grey',
         paddingHorizontal: 15,
@@ -278,28 +378,37 @@ const styles = StyleSheet.create({
         marginRight: 10,
         justifyContent: 'space-between',
     },
-    input: {
+    input:{
         color: 'grey',
         width: "70%",
     },
-    row2: {
-        justifyContent: "flex-start"
+    row2:{
+        justifyContent: "flex-start",
+        flexDirection: 'row'
     },
-    modal: {
+    row3:{
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        borderBottomColor: 'grey',
+        borderBottomWidth: 1,
+        paddingBottom: 13,
+        marginTop: 13,
+        alignItems: 'center'
+    },
+    modal:{
         backgroundColor: 'white',
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40,
-        //top: Dimensions.get('screen').height/2,
-        //flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 15,
-        position: 'absolute',
-        bottom: 0
+        height: Dimensions.get('screen').height,
+        flex: 1,
+        paddingHorizontal:20,
+        //position: 'absolute',
+        //bottom:0,
+        width: Dimensions.get('screen').width,
+        paddingTop: 10,
     },
-    grey: {
+    grey:{
         color: 'grey'
     },
-    btn: {
+    btn:{
         width: '70%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -307,15 +416,15 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         height: 50
     },
-    white: {
+    white:{
         color: 'white'
     },
-    greybtn: {
+    greybtn:{
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 40
     },
-    button: {
+    button:{
         width: '30%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -324,11 +433,25 @@ const styles = StyleSheet.create({
         height: 50,
         marginTop: 5
     },
-    wrap: {
+    wrap:{
         flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         marginTop: 10
-    }
+    },
+    green:{
+        color: 'green',
+        fontFamily: 'sans-serif-medium',
+        fontSize: 15
+    },
+    close:{
+        width: '30%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'grey',
+        borderRadius: 5,
+        height: 50,
+    },
+
 })
 export default Search;
