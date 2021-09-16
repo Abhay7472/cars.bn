@@ -5,9 +5,10 @@
 import {AppRegistry} from 'react-native';
 import App from './src/App';
 import {name as appName} from './app.json'; 
-import Photo from './src/photo'
  
-AppRegistry.registerComponent(appName, () =>Photo);
+//import Search from './src/Screens/DrawerContainer/Search' 
+
+AppRegistry.registerComponent(appName, () =>App);
 
    //profile change
    //create new post

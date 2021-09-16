@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Button } from "react-native";
-import Colors from './constants/Colors.js'
+import Colors from '../../constants/Colors.js'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 //import DateTimePickerModal from "react-native-modal-datetime-picker";
 import Icon from 'react-native-vector-icons/AntDesign'
 import { SliderBox } from "react-native-image-slider-box";
 
 
-const NewDesign = ({ navigation }) => {
+const Promotion = ({ navigation }) => {
 
     const images = [
         "https://source.unsplash.com/1024x768/?audi",
@@ -95,7 +95,7 @@ const NewDesign = ({ navigation }) => {
         </ScrollView>
     )
 }
-export default NewDesign;
+export default Promotion;
 
 const styles = StyleSheet.create({
     input: {

@@ -15,15 +15,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import images from '../../constants/Images';
-// import colors from '../../constants/Colors';
 import { useTheme } from 'react-native-paper';
 
 import { AuthContext } from '../../model/context';
 
 import Users from '../../model/user';
 
-const SignInScreen = ({ navigation }) => {
+const SignInScreen = ({ route, navigation }) => {
 
+    const { type }  = route.params;
+    
     const [data, setData] = React.useState({
         username: '',
         password: '',
@@ -31,6 +32,7 @@ const SignInScreen = ({ navigation }) => {
         secureTextEntry: true,
         isValidUser: true,
         isValidPassword: true,
+        userType : type,
     });
 
     const { colors } = useTheme();
@@ -213,9 +215,15 @@ const SignInScreen = ({ navigation }) => {
                     <Text style={{ color: "#213884", marginTop: 15 }}>Forgot password?</Text>
 
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
+                
+                { data.userType == 1 ?
+                    <TouchableOpacity onPress={() => navigation.navigate('RegistrationScreen')}>
                     <Text style={{color:"#213884",paddingTop:15}}>Do not Have an account Register Now</Text>
-                </TouchableOpacity>
+                    </TouchableOpacity> : 
+                    <TouchableOpacity onPress={() => navigation.navigate('RagistrationDealerScreen')}>
+                        <Text style={{color:"#213884",paddingTop:15}}>Do not Have an account Register Now</Text>
+                    </TouchableOpacity>
+                }                
 
                 <View style={styles.button}>
                     <TouchableOpacity
@@ -226,9 +234,8 @@ const SignInScreen = ({ navigation }) => {
                             colors={["#213884","#213884"]}
                             style={styles.signIn}
                         >
-                            <Text style={[styles.textSign, {
-                                color: '#fff'
-                            }]}>Sign In</Text>
+                            <Text style={[styles.textSign, {color: '#fff'}]}>Sign In</Text>
+
                         </LinearGradient>
                     </TouchableOpacity>
 

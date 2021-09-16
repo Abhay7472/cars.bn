@@ -19,14 +19,9 @@ const RagistrationDealerScreen = ({ navigation }) => {
             const results = await DocumentPicker.pickMultiple({
                 type: [DocumentPicker.types.allFiles],
             })
-            for (const res of results) {
-                console.log(
-                    res.uri,
-                    res.type, // mime type
-                    res.name,
-                    res.size,
-                )
-            }
+
+            console.log(results[0].uri);
+
         } catch (err) {
             if (DocumentPicker.isCancel(err)) {
                 // User cancelled the picker, exit any dialogs or menus and move on

@@ -4,9 +4,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import images from '../../constants/Images';
 import Button from '../../components/Button';
 import Colors from '../../constants/Colors'
- 
 
-const Dashboard = ({navigation}) => {
+
+const Dashboard = ({ navigation }) => {
 
     const data1 = [
         { title: '2018 Toyota C HR 1.8', paragraph: 'Automatic | 4Seater | Sadan', body: 'Lodon Ispum is simple domy Text' },
@@ -61,9 +61,9 @@ const Dashboard = ({navigation}) => {
                     <View style={{ flexDirection: 'row', }}>
                         <Image source={images.cardImage} style={{ width: "30%", height: "80%" }} />
                         <View >
-                            <Text style={{ paddingLeft: 10, color:Colors.PrimaryBlue, fontSize: 18, fontWeight: 'bold' }}>PENDING ADMIN APPROVAL</Text>
+                            <Text style={{ paddingLeft: 10, color: Colors.PrimaryBlue, fontSize: 18, fontWeight: 'bold' }}>PENDING ADMIN APPROVAL</Text>
                             <Text style={{ fontSize: 20, fontWeight: 'bold', paddingLeft: 3 }}> 2018 Toyota C-HR 1.8</Text>
-                            <Text style={{ fontSize: 20, color:Colors.Red, fontWeight: 'bold', paddingLeft: 5 }}>$20500</Text>
+                            <Text style={{ fontSize: 20, color: Colors.Red, fontWeight: 'bold', paddingLeft: 5 }}>$20500</Text>
                             <Text style={{ fontSize: 15, paddingLeft: 5 }}>Automatice | 4 Seater | Sadan</Text>
                             <TouchableOpacity >
                                 <View style={styles.cardBtn}>
@@ -95,24 +95,24 @@ const Dashboard = ({navigation}) => {
                             <Text style={{ fontSize: 15, color: 'red', fontWeight: 'bold', paddingLeft: 5 }}>$20500</Text>
 
                             <View style={{ flexDirection: 'row' }}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => navigation.navigate('Sponsor')}>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#FFC53E", paddingLeft: 30, paddingRight: 30, marginLeft: 10, marginRight: 10 }]}>Boost</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={()=>navigation.navigate('RequestStatus')}>
+                                <TouchableOpacity onPress={() => navigation.navigate('RequestStatus')}>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#73C5ED", paddingLeft: 20, paddingRight: 20 }]}>INSPECTION</Text>
                                 </TouchableOpacity>
                             </View>
 
 
                             <View style={{ flexDirection: 'row' }}>
-                                <TouchableOpacity style={{ paddingTop: 10 }}>
+                                <TouchableOpacity style={{ paddingTop: 10 }} onPress={() => navigation.navigate('Photography')}>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#EA0787", marginLeft: 5, marginRight: 5 }]}>Get 360</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{ paddingTop: 10 }}>
+                                <TouchableOpacity style={{ paddingTop: 10 }} onPress={() => navigation.navigate('Promotion')}>
                                     <Text style={[styles.colorbtn, { backgroundColor: "#F2E646", marginLeft: 5, marginRight: 5 }]}>Quick Sell</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{ paddingTop: 10 }}>
-                                    <Text style={[styles.colorbtn, { backgroundColor: "#F68D1B",  }]}>Promote</Text>
+                                <TouchableOpacity style={{ paddingTop: 10 }} onPress={() => navigation.navigate('Promotion')}>
+                                    <Text style={[styles.colorbtn, { backgroundColor: "#F68D1B", }]}>Promote</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center',
         fontSize: 13,
-        
+
     },
 
     card: {

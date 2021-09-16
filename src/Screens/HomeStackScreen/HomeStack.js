@@ -5,6 +5,7 @@ import Home from './Home';
 import New from './New';
 import NewCar from './NewCar';
 import OldCar from './OldCar';
+import Search from './Search'
 import AuctionLive from './AuctionLive'
 import RentalCar from './RentalCar';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -37,6 +38,7 @@ const HomeStackScreen = (props, { route, navigation }) => (
         <HomeStack.Screen name="OldCar" component={OldCar} options={{ title: 'Old Car', headerShown: true }} />
         <HomeStack.Screen name="AuctionLive" component={AuctionLive} options={{ title: 'Auction Live', headerShown: true }} />
         <HomeStack.Screen name="RentalCar" component={RentalCar} options={{ title: 'Rental Car', headerShown: true }} />
+        <HomeStack.Screen name="Search" component={Search} options={{ title: 'Search', headerShown: true }} />
 
 
     </HomeStack.Navigator>

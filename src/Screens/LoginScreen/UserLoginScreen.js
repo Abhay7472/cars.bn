@@ -18,11 +18,15 @@ export default function UserLoginScreen({ navigation }) {
                     justifyContent: 'space-between',
                     alignItems: 'center'
                 }}>
-                    <Button style={style.button} onPress={() => navigation.navigate('SocialLoginScreen')}>
+                    <Button style={style.button} onPress={() => navigation.navigate('SignInScreen',{
+                            type: 1
+                    })}>
                         <Text style={{ color: Colors.PrimaryBlue, fontSize: 16 }}>CUSTOMER</Text>
                     </Button>
 
-                    <Button style={style.button} onPress={() => navigation.navigate('RagistrationDealerScreen')}>
+                    <Button style={style.button} onPress={() => navigation.navigate('SignInScreen',{
+                        type: 2
+                    })}>
                         <Text style={{ color: Colors.PrimaryBlue, fontSize: 16 }}>DEALER</Text>
                     </Button>
                 </View>

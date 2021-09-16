@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, Button } from "react-native";
-import Colors from './constants/Colors.js'
+import React from "react";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import Colors from '../../constants/Colors.js'
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-//import DateTimePickerModal from "react-native-modal-datetime-picker";
-import Icon from 'react-native-vector-icons/AntDesign'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { SliderBox } from "react-native-image-slider-box";
 
-
-const NewDesign = ({ navigation }) => {
+const Photography = ({ navigation }) => {
 
     const images = [
         "https://source.unsplash.com/1024x768/?audi",
@@ -15,7 +14,6 @@ const NewDesign = ({ navigation }) => {
         "https://source.unsplash.com/1024x768/?car?",
         "https://source.unsplash.com/1024x768/?bmw",
     ]
-
 
     const ImageCard = () => {
         return (
@@ -33,91 +31,66 @@ const NewDesign = ({ navigation }) => {
                 ImageComponentStyle={styles.ImageComponentStyle}
                 imageLoadingColor="#2196F3"
 
-            />)
+            />
+        )
     }
-
     const Card1 = () => {
         return (
             <View style={styles.card}>
                 <View style={styles.row}>
-                    <Ionicons name="mail" color={"#EA002A"} size={23} />
-                    <Text style={styles.bigBlueText}>info@carsbn.com</Text>
+                    <Ionicons name="car" color={"#EA002A"} size={30} />
+                    <Text style={styles.bigBlueText}>Audi</Text>
                 </View>
-                <View style={styles.row}>
+                {/* <View style={styles.row}>
                     <Ionicons name="call" color={"#EA002A"} size={23} />
                     <Text style={styles.bigBlueText}>+140-212345561</Text>
                 </View>
                 <View style={styles.row}>
                     <Ionicons name="location-sharp" color={"#EA002A"} size={25} />
                     <Text style={styles.bigBlueText}>122, Baker Street, Jaipur, Rajasthan</Text>
-                </View>
+                </View> */}
             </View>
         )
     }
 
-    const Form = () => {
+    const Card2 = () => {
         return (
-            <View>
-                <Text style={styles.blueText} >Email</Text>
-                <TextInput style={styles.input} placeholder="youmail@Example.com" />
-                <Text style={styles.blueText}>Phone no.</Text>
-                <TextInput style={styles.input} placeholder="+91 935685545" />
-                <Text style={styles.blueText}>Message</Text>
-                <TextInput style={styles.input} placeholder=" TYPE your message" />
-                <TextInput placeholder="  Enter Amount"
-                    placeholderTextColor={Colors.PrimaryBlue}
-                    style={{ margin: 10, borderWidth: 2, alignSelf: 'center', }}>
-                </TextInput>
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btntext} >Request For Sponsor</Text>
-
-                </TouchableOpacity>
+            <View style={styles.card}>
+                <View style={styles.row}>
+                   <TouchableOpacity> 
+                       <AntDesign name="calendar" color={"#EA002A"} size={30} />
+                   </TouchableOpacity>
+                    <Text style={styles.bigBlueText}>Choose a date for Photography </Text>
+                
+                </View>                
             </View>
         )
     }
 
+     
 
     return (
         <ScrollView style={styles.main}>
             <ImageCard />
-            <View style={{ marginTop: 20 }}>
-                <Card1 />
-                <Form />
+            <View style={{marginTop:20}}>
+                <Card1/>
+               <Card2/>
+               <TouchableOpacity style={styles.btn}>
+                    <Text style={styles.btntext} >Request For 360 Photography</Text>
+                </TouchableOpacity>
             </View>
-
 
         </ScrollView>
     )
 }
-export default NewDesign;
+export default Photography
 
 const styles = StyleSheet.create({
-    input: {
-        borderBottomColor: "darkgrey",
-        borderBottomWidth: 1,
-        color: '#696969',
-        fontFamily: 'sans-serif-medium',
-        padding: 0,
-    },
-    blueText: {
-        color: "#213884",
-        fontSize: 14,
-        marginTop: 5,
-        fontFamily: 'sans-serif-medium',
-    },
-    btn: {
-        backgroundColor: "#213884",
-        borderRadius: 50,
-        alignSelf: 'center',
-        width: '40%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 20
-    },
     btntext: {
         color: 'white',
         fontSize: 14,
-        padding: 10
+        padding: 10,
+        
     },
     row: {
         flexDirection: 'row'
@@ -132,11 +105,15 @@ const styles = StyleSheet.create({
     },
     bigBlueText: {
         color: "#213884",
-        fontSize: 15,
+        fontSize: 20,
         marginLeft: 5,
         fontFamily: 'sans-serif-medium',
         alignSelf: 'center'
     }, 
+    main: {
+        flex: 1,
+    },
+  
     paginationBoxStyle: {
         position: "absolute",
         bottom: 0,
@@ -160,7 +137,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 15
     },
-   
     
-
+     
 })

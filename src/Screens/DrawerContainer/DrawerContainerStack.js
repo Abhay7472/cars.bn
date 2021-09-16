@@ -9,6 +9,9 @@ import AskAdmin from '../DrawerContainer/AskAdmin';
 import Message from '../DrawerContainer/Message';
 import PrivacyPolicy from '../DrawerContainer/PrivacyPolicy';
 import RequestStatus from './RequestStatus';
+import Photography from './Photography';
+import Promotion from './Promotion';
+import Sponsor from './Sponsor';
 import MyPostDesign from './NewPostStackScreen/MyPostDesign';
 import TermCondition from '../DrawerContainer/TermCondition';
 import CreatePost1 from './NewPostStackScreen/CreatePost1'
@@ -61,7 +64,10 @@ const DrawerContainerStack = (props, { navigation }) => (
     <DrawerContainer.Screen name="Dashboard" component={Dashboard} options={{ title: 'Dashboard' }} />
     <DrawerContainer.Screen name="AuctionLiveBidding" component={AuctionLiveBidding} options={{ title: 'Auction Live Bidding' }} />
     <DrawerContainer.Screen name="CreatePostPrice" component={CreatePostPrice} options={{ title: 'Create Post Price' }} />
-    <DrawerContainer.Screen name="CreatePostAuction" component={CreatePostAuction} options={{ title:  'Auction' }} />
+    <DrawerContainer.Screen name="CreatePostAuction" component={CreatePostAuction} options={{ title: 'Auction' }} />
+    <DrawerContainer.Screen name="Photography" component={Photography} options={{ title: 'Photography' }} />
+    <DrawerContainer.Screen name="Promotion" component={Promotion} options={{ title: 'Promotion' }} />
+    <DrawerContainer.Screen name="Sponsor" component={Sponsor} options={{ title: 'Sponsor' }} />
 
   </DrawerContainer.Navigator>
 );

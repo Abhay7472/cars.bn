@@ -11,7 +11,6 @@ import colors from '../../constants/Colors';
 import { RadioButton, TextInput } from 'react-native-paper';
 
 
-
 const Home = ({ navigation }) => {
 
     const [checked, setChecked] = React.useState('first');
@@ -97,7 +96,7 @@ const Home = ({ navigation }) => {
                 </View>
                 <View>
                     <TouchableOpacity style={styles.orangeButton}
-                        onPress={() => navigation.navigate('New')}>
+                        onPress={() => navigation.navigate('Search')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Used</Text>
