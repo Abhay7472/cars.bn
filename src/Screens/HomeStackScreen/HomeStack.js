@@ -3,12 +3,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Feather from 'react-native-vector-icons/Feather';
 import Home from './Home';
 import New from './New';
+import Used from './Used';
 import NewCar from './NewCar';
 import OldCar from './OldCar';
 import Search from './Search'
 import AuctionLive from './AuctionLive'
 import RentalCar from './RentalCar';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import colors from '../../constants/Colors'
 
 const HomeStack = createStackNavigator();
 
@@ -23,13 +26,17 @@ const HomeStackScreen = (props, { route, navigation }) => (
             color: "black"
 
         },
+        headerTitleStyle: {
+            color: colors.PrimaryBlue,                
+         
+          },
         headerLeft: () => (
             <Icon.Button name="ios-menu" size={25} backgroundColor="white" color='#213884' onPress={() => props.navigation.openDrawer()}></Icon.Button>
         ),
 
-        headerRight: () => (
-            <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
-        )
+        // headerRight: () => (
+        //     <Feather.Button name="message-square" size={22} backgroundColor="white" color='#213884' onPress={() => props.navigation.navigate('Message')}></Feather.Button>
+        // )
     }}>
 
         <HomeStack.Screen name="Home" component={Home} options={{ title: 'Home', headerShown: true }} />
@@ -39,6 +46,7 @@ const HomeStackScreen = (props, { route, navigation }) => (
         <HomeStack.Screen name="AuctionLive" component={AuctionLive} options={{ title: 'Auction Live', headerShown: true }} />
         <HomeStack.Screen name="RentalCar" component={RentalCar} options={{ title: 'Rental Car', headerShown: true }} />
         <HomeStack.Screen name="Search" component={Search} options={{ title: 'Search', headerShown: true }} />
+        <HomeStack.Screen name="Used" component={Used} options={{ title: 'Used Cars', headerShown: true }} />
 
 
     </HomeStack.Navigator>

@@ -39,7 +39,7 @@ const MyPostDesign = () => {
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>Ford Mustang-2014</Text>
                     <Text style={styles.paragraph}> 4250km | Automatic</Text>
-                    <Text style={[styles.paragraph, { color: "#213884", fontSize: 20 }]}> $ 25000</Text>
+                    <Text style={[styles.paragraph, { color: "#213884", fontSize: 15 }]}> $ 25000</Text>
                 </View>
 
                 <Modal

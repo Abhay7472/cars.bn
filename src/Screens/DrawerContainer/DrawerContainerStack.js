@@ -5,6 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import Payment from '../DrawerContainer/Payment';
+import Used from './NewPostStackScreen/Used';
 import AskAdmin from '../DrawerContainer/AskAdmin';
 import Message from '../DrawerContainer/Message';
 import PrivacyPolicy from '../DrawerContainer/PrivacyPolicy';
@@ -22,9 +23,12 @@ import ForAuction from './NewPostStackScreen/ForAuction';
 import CreatePostPrice from './NewPostStackScreen/CreatePostPrice';
 import AuctionLiveBidding from './AuctionLiveBidding';
 import Dashboard from '../DrawerContainer/DashBoard'
-import CreatePostAuction from './NewPostStackScreen/CreatePostAuction';
-import Color from '../../constants/Colors'
-import { colors } from 'react-native-elements';
+import Third from './NewPostStackScreen/Third';
+import Rental from './NewPostStackScreen/Rental';
+// import Calculator from './Calculator';
+import CreatePostUsed from './NewPostStackScreen/CreatePostUsed';
+import colors from '../../constants/Colors'
+//import { colors } from 'react-native-elements';
 
 
 const DrawerContainer = createStackNavigator();
@@ -40,6 +44,11 @@ const DrawerContainerStack = (props, { navigation }) => (
       color: "black"
 
     },
+    headerTitleStyle: {
+      color: colors.PrimaryBlue,
+
+    },
+
     headerLeft: () => (
       <Icon.Button name="ios-menu" size={25} backgroundColor="white" color='#213884' onPress={() => props.navigation.openDrawer()}></Icon.Button>
     ),
@@ -49,7 +58,10 @@ const DrawerContainerStack = (props, { navigation }) => (
     // )
   }}>
 
+    <DrawerContainer.Screen name="Rental" component={Rental} options={{ title: 'Rental', headerTintColor: '#fff', }} />
     <DrawerContainer.Screen name="Payment" component={Payment} options={{ title: 'Payment', headerTintColor: '#fff', }} />
+    <DrawerContainer.Screen name="Third" component={Third} options={{ title: 'Third', headerTintColor: '#fff', }} />
+    <DrawerContainer.Screen name="Used" component={Used} options={{ title: 'Used', headerTintColor: '#fff', }} />
     <DrawerContainer.Screen name="AskAdmin" component={AskAdmin} options={{ title: 'Ask Admin' }} />
     <DrawerContainer.Screen name="Message" component={Message} options={{ title: 'Message' }} />
     <DrawerContainer.Screen name="PrivacyPolicy" component={PrivacyPolicy} options={{ title: 'Privacy Policy' }} />
@@ -63,11 +75,12 @@ const DrawerContainerStack = (props, { navigation }) => (
     <DrawerContainer.Screen name="ForAuction" component={ForAuction} options={{ title: ' For Auction' }} />
     <DrawerContainer.Screen name="Dashboard" component={Dashboard} options={{ title: 'Dashboard' }} />
     <DrawerContainer.Screen name="AuctionLiveBidding" component={AuctionLiveBidding} options={{ title: 'Auction Live Bidding' }} />
-    <DrawerContainer.Screen name="CreatePostPrice" component={CreatePostPrice} options={{ title: 'Create Post Price' }} />
-    <DrawerContainer.Screen name="CreatePostAuction" component={CreatePostAuction} options={{ title: 'Auction' }} />
+    <DrawerContainer.Screen name="CreatePostPrice" component={CreatePostPrice} options={{ title: 'Price' }} />
+    <DrawerContainer.Screen name="CreatePostUsed" component={CreatePostUsed} options={{ title: 'Used' }} />
     <DrawerContainer.Screen name="Photography" component={Photography} options={{ title: 'Photography' }} />
     <DrawerContainer.Screen name="Promotion" component={Promotion} options={{ title: 'Promotion' }} />
     <DrawerContainer.Screen name="Sponsor" component={Sponsor} options={{ title: 'Sponsor' }} />
+    {/* <DrawerContainer.Screen name="Calculator" component={Calculator} options={{ title: 'Calculator' }} /> */}
 
   </DrawerContainer.Navigator>
 );

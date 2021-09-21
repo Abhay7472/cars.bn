@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import colors from '../../constants/Colors'
 import images from '../../constants/Images'
 
-const New = ({navigation}) => {
+const Used = ({navigation}) => {
 
     const [like, setLike] = useState(false)
     const [list1, setlist1] = useState(false)
@@ -238,4 +238,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default New
+export default Used

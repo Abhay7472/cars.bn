@@ -272,7 +272,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius:10,
         borderBottomRightRadius:10,
         paddingLeft: 20,
-        backgroundColor: '#fff',
+       // backgroundColor: '#fff',
         borderBottomColor: colors.DarkGray3,
         height: 35
     },

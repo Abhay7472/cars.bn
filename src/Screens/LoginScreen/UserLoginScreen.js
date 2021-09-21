@@ -18,7 +18,7 @@ export default function UserLoginScreen({ navigation }) {
                     justifyContent: 'space-between',
                     alignItems: 'center'
                 }}>
-                    <Button style={style.button} onPress={() => navigation.navigate('SignInScreen',{
+                       <Button style={style.button} onPress={() => navigation.navigate('SignInScreen',{
                             type: 1
                     })}>
                         <Text style={{ color: Colors.PrimaryBlue, fontSize: 16 }}>CUSTOMER</Text>

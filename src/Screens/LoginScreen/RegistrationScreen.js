@@ -2,11 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import Feather from 'react-native-vector-icons/Feather';
 import colors from '../../constants/Colors';
 import images from '../../constants/Images'
 
 
 const Login = () => {
+
+     
+    const [data, setData] = React.useState({
+        username: '',
+        password: '',
+        check_textInputChange: false,
+        secureTextEntry: true,
+        isValidUser: true,
+        isValidPassword: true,
+        //userType : type,
+    });
+    
+    const updateSecureTextEntry = () => {
+        setData({
+            ...data,
+            secureTextEntry: !data.secureTextEntry
+        });
+    }
+
 
     const Form = () => {
         const navigation = useNavigation();
@@ -49,12 +69,58 @@ const Login = () => {
 
                 <View style={[styles.headerWrapper, { marginTop: 5 }]}>
                     <Text style={{ color: "#213884" }}>  Password </Text>
-                    <TextInput placeholder="Password" style={styles.input}> </TextInput>
+                    <TextInput placeholder="Password" secureTextEntry={data.secureTextEntry ? true : false}
+                        style={[styles.input, {
+                            color: colors.DarkGray3
+                        }]}
+                        autoCapitalize="none"> </TextInput>
+                          <TouchableOpacity
+                        onPress={updateSecureTextEntry}
+                        style={{alignSelf:'flex-end',position:'absolute',paddingTop:10}}
+                    >
+                        {data.secureTextEntry ?
+                            <Feather
+                                name="eye-off"
+                                color="grey"
+                                size={20}
+                            />
+                            :
+                            <Feather
+                                name="eye"
+                                color="grey"
+                                size={20}
+                            />
+                        }
+                    </TouchableOpacity>
                 </View>
 
                 <View style={[styles.headerWrapper, { marginTop: 5 }]}>
                     <Text style={{ color: "#213884" }}> Confirm Password </Text>
-                    <TextInput placeholder="Confirm Password" style={styles.input}> </TextInput>
+                    <TextInput placeholder=" Confirm Password" secureTextEntry={data.secureTextEntry ? true : false}
+                        style={[styles.input, {
+                            color: colors.DarkGray3
+                        }]}
+                        autoCapitalize="none"> </TextInput>
+                             <TouchableOpacity
+                        onPress={updateSecureTextEntry}
+                        style={{alignSelf:'flex-end',position:'absolute',paddingTop:15}}
+                    >
+                        {data.secureTextEntry ?
+                            <Feather
+                                name="eye-off"
+                                color="grey"
+                                size={20}
+                            />
+                            :
+                            <Feather
+                                name="eye"
+                                color="grey"
+                                size={20}
+                            />
+                        }
+                    </TouchableOpacity>
+
+                
                 </View>
                 <TouchableOpacity style={styles.btn}
                     onPress={() => navigation.navigate('SignInScreen')}>
@@ -136,6 +202,13 @@ const styles = StyleSheet.create({
         color: colors.PrimaryBlue,
         paddingTop: 5
     },
+    textInput: {
+        flex: 1,
+        marginTop: Platform.OS === 'ios' ? 0 : -12,
+        paddingLeft: 10,
+        color: '#05375a',
+    },
+
 
 })
 

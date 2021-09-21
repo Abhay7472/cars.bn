@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image,ScrollView } from 'react-native';
 import SwitchButton from 'switch-button-react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../constants/Colors';
 import images from '../../constants/Images';
 
 
-const Calculator = () => {
+const Calculator = ( {navigation}) => {
 
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => {
@@ -14,7 +14,7 @@ const Calculator = () => {
     }
 
     return (
-        <View style={styles.main}>
+        <ScrollView style={styles.main}>
 
             <View style={styles.row}>
                 <Image style={styles.image} source={images.car} />
@@ -44,6 +44,8 @@ const Calculator = () => {
                     btnBackgroundColor='white'
                     fontColor='#b1b1b1'
                     activeFontColor={Colors.Blue}
+                  //  onpress ={()=>navigation.navigate('')}
+                   
                 />
             </View>
             <View style={styles.row2}>
@@ -95,7 +97,7 @@ const Calculator = () => {
             </View>
 
 
-        </View>
+        </ScrollView>
     )
 }
 

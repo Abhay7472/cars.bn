@@ -79,7 +79,7 @@ const AskAdmin = ({navigation:{goBack}}) => {
     }
 
     return (
-        <ScrollView style={styles.main}>
+        <View style={styles.main}>
             <View style={styles.upper}>
                 <Image style={styles.img} source={images.carLogo} />
             </View>
@@ -98,7 +98,7 @@ const AskAdmin = ({navigation:{goBack}}) => {
                 <Form />
 
             </View>
-        </ScrollView>
+        </View>
     )
 
 };

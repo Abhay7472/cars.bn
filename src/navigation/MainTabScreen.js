@@ -8,7 +8,7 @@ import NotificationStack from '../Screens/NotificationStackScreen/NotificationSt
 import AuctionStack from '../Screens/AuctionStackScreen/AuctionStack'
 import HomeStack from '../Screens/HomeStackScreen/HomeStack.js'
 import SavedStack from '../Screens/SavedStackScreen/SavedStack'
-import Colors from '../constants/Colors'
+import colors from '../constants/Colors'
 
 //import { colors } from 'react-native-elements';
 
@@ -18,13 +18,17 @@ const Tab = createMaterialBottomTabNavigator();
 const MainTabScreen = () => (
   <Tab.Navigator
     initialRouteName="HomeStack"
-    activeColor={Colors.Red}
-    inactiveColor={Colors.PrimaryBlue}
+    activeColor={colors.Red}
+    inactiveColor={colors.PrimaryBlue}
     tabBarOptions={{
       style: {
         backgroundColor: 'white',
         keyboardHidesTabBar: true
-      }
+      },
+      headerTitleStyle: {
+        color: colors.PrimaryBlue,    
+           
+      },
     }}
 
   >

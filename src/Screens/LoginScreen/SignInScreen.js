@@ -168,7 +168,7 @@ const SignInScreen = ({ route, navigation }) => {
 
                 <Text style={[styles.text_footer, {
                     color:  "#213884",
-                    marginTop: 35
+                    marginTop: 5
                 }]}>Password</Text>
                 <View style={styles.action}>
                     <Feather
@@ -211,7 +211,7 @@ const SignInScreen = ({ route, navigation }) => {
                 }
 
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate("ForgetPassword")}>
                     <Text style={{ color: "#213884", marginTop: 15 }}>Forgot password?</Text>
 
                 </TouchableOpacity>
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 30
     },
     signIn: {
         width: '100%',

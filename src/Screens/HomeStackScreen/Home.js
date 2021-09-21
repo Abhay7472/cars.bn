@@ -96,28 +96,28 @@ const Home = ({ navigation }) => {
                 </View>
                 <View>
                     <TouchableOpacity style={styles.orangeButton}
-                        onPress={() => navigation.navigate('Search')}>
+                        onPress={() => navigation.navigate('Used')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Used</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.brownButton}
-                        onPress={() => navigation.navigate('New')}>
+                        onPress={() => navigation.navigate('Search')}>
                         <EvilIcons name="refresh" color="white" size={45} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Sell</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.redButton}
-                        onPress={() => navigation.navigate('New')}>
+                        onPress={() => navigation.navigate('RentalCar')}>
                         <Entypo name="key" color="#fff" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Rent</Text>
                 </View>
                 <View>
                     <TouchableOpacity style={styles.purpleButton}
-                        onPress={() => navigation.navigate('New')}>
+                        onPress={() => navigation.navigate('AuctionLive')}>
                         <FontAwesome name="thumbs-up" color="white" size={25} />
                     </TouchableOpacity>
                     <Text style={styles.btntext}>Auction</Text>

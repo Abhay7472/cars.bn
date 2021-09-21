@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, ScrollView, FlatList } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { RadioButton } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
-
 import colors from '../../../constants/Colors';
 import images from '../../../constants/Images';
-import Button from '../../../components/Button';
 
 
 
-const CreatePost3 = ({navigation:{goBack}}) => {
+
+const CreatePost3 = ({ navigation: { goBack } }) => {
 
     const [checked, setChecked] = React.useState('first');
     const [pickerValue, setpickerValue] = React.useState('first');
@@ -18,7 +16,7 @@ const CreatePost3 = ({navigation:{goBack}}) => {
 
     return (
         <ScrollView>
-            <View>                
+            <View>
                 <Image source={images.carImage} style={{ borderRadius: 40, alignSelf: 'center', width: "95%", marginTop: 20 }} />
                 <View>
                     <View>
@@ -35,7 +33,7 @@ const CreatePost3 = ({navigation:{goBack}}) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Model</Text>
+                        <Text style={[styles.textInputText, { borderTopWidth: 1, borderTopLeftRadius: 25, borderTopRightRadius: 25 }]}>Model</Text>
                         <Picker
                             style={styles.picker}
                             selectedValue={pickerValue}
@@ -47,10 +45,10 @@ const CreatePost3 = ({navigation:{goBack}}) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Category</Text>
+                        <Text style={[styles.textInputText, { borderTopWidth: 1, borderTopLeftRadius: 25, borderTopRightRadius: 25 }]}>Category</Text>
                         <Picker
                             style={styles.picker}
-                            selectedValue={pickerValue}                            
+                            selectedValue={pickerValue}
                             onValueChange={(itemValue) => setpickerValue(itemValue)}
                         >
                             <Picker.Item label="java" value="java"></Picker.Item>
@@ -59,7 +57,7 @@ const CreatePost3 = ({navigation:{goBack}}) => {
                         </Picker>
                     </View>
                     <View>
-                        <Text style={[styles.textInputText,{borderTopWidth:1,borderTopLeftRadius:25,borderTopRightRadius:25}]}>Current Mileage</Text>
+                        <Text style={[styles.textInputText, { borderTopWidth: 1, borderTopLeftRadius: 25, borderTopRightRadius: 25 }]}>Current Mileage</Text>
                         <TextInput style={styles.textInput}>
                         </TextInput>
                     </View>
@@ -130,7 +128,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
         paddingLeft: 20,
-        paddingTop:5
+        paddingTop: 5
 
     },
     textInputText: {
@@ -152,8 +150,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 20,
         marginTop: 60,
-        marginBottom:30
-         
+        marginBottom: 30
+
 
 
     },

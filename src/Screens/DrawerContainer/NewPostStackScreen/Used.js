@@ -1,43 +1,49 @@
 import React, { useState } from 'react'
-import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, } from 'react-native'
+import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, ScrollView } from 'react-native'
 import StepIndicator from 'react-native-step-indicator';
+import { Picker } from '@react-native-picker/picker';
 import { RadioButton, TextInput } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import colors from '../../../constants/Colors';
 import images from '../../../constants/Images';
-import { Picker } from '@react-native-picker/picker';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
+const Used = ({ navigation }) => {
 
-const CreatePost1 = ({ navigation }) => {
-
-    const [checked, setChecked] = React.useState('first');
     const [pickerValue, setpickerValue] = React.useState('first');
+    const [currentPosition, setCurrentPosition] = useState(2);
+    const [checked, setChecked] = React.useState('Second');
+
 
     const labels = []
     const customStyles = {
-        separatorStrokeWidth: 1,
+        stepIndicatorSize: 25,
+        separatorStrokeWidth: 2,
         currentStepIndicatorSize: 30,
-        stepStrokeCurrentColor: 'red',
+        stepStrokeCurrentColor: 'white',
         stepStrokeWidth: 3,
-        stepIndicatorCurrentColor: 'red',
-        stepStrokeUnFinishedColor: 'grey',
+        stepStrokeFinishedColor: 'red',
+        stepStrokeUnFinishedColor: 'white',
         separatorFinishedColor: 'red',
-        separatorUnFinishedColor: 'grey',
-        separatorFinishedColor: 'white',
+        separatorUnFinishedColor: 'red',
+        stepIndicatorFinishedColor: 'red',
         stepIndicatorUnFinishedColor: 'white',
+        stepIndicatorCurrentColor: 'white',
     }
 
+
     return (
-        <View>
+        <ScrollView>
             <View style={{ marginTop: 20 }}>
                 <StepIndicator
                     customStyles={customStyles}
                     labels={labels}
-                    stepCount="3" />
+                    currentPosition={currentPosition}
+                    stepCount='3' />
             </View>
             <ImageBackground
                 source={images.carImage}
-                style={{ height: '70%', marginTop: 20, width: "100%" }}>
+                style={{ height: '50%', marginTop: 20, width: "100%" }}>
                 <View style={[styles.card,]}>
                     <View style={{ flexDirection: 'row', }}>
                         <RadioButton
@@ -52,7 +58,7 @@ const CreatePost1 = ({ navigation }) => {
                             value="Second"
                             status={checked === 'Second' ? 'checked' : 'unchecked'}
                             onPress={() => setChecked('Second')}
-                            onPress={() => navigation.navigate('Used')}
+                            onPress={() => navigation.navigate('CreatePostPrice')}
                             color="red"
                         /><Text style={{ color: '#00008b', fontSize: 20, paddingTop: 5, paddingRight: 10 }}> Used</Text>
                         <RadioButton
@@ -64,7 +70,7 @@ const CreatePost1 = ({ navigation }) => {
                         /><Text style={{ color: '#00008b', paddingTop: 3, fontSize: 20 }}> Rental</Text>
                     </View>
                     <Text style={[styles.text_footer, {
-                        color: "#213884"
+                        color: "#213884", paddingTop: 5
                     }]}>Make</Text>
                     <View>
 
@@ -78,23 +84,20 @@ const CreatePost1 = ({ navigation }) => {
                         </Picker>
 
                     </View>
-                    <Text style={[styles.text_footer, {
-                        color: "#213884", borderTopWidth: 1
-                    }]}>Modal</Text>
-                    {/* <View>
+                    <View>
+                        <Text style={[styles.dropSownText, { paddingTop: 20, borderTopWidth: 1 }]}>Model</Text>
                         <Picker
                             style={styles.picker}
                             selectedValue={pickerValue}
                             onValueChange={(itemValue) => setpickerValue(itemValue)}>
-                            <Picker.Item label="10" value="10"></Picker.Item>
-                            <Picker.Item label="20" value="20"></Picker.Item>
-                            <Picker.Item label="30" value="30"></Picker.Item>
+                            <Picker.Item label="abc" value="abc"></Picker.Item>
+                            <Picker.Item label="marvel" value="marvel"></Picker.Item>
+                            <Picker.Item label="xyz" value="xyz"></Picker.Item>
                         </Picker>
+
                     </View>
-                    <Text style={[styles.text_footer, {
-                        color: "#213884", borderTopWidth: 1
-                    }]}>Year</Text>
                     <View>
+                        <Text style={[styles.dropSownText, { paddingTop: 20, borderTopWidth: 1 }]}>Year</Text>
                         <Picker
                             style={styles.picker}
                             selectedValue={pickerValue}
@@ -103,11 +106,48 @@ const CreatePost1 = ({ navigation }) => {
                             <Picker.Item label="2" value="2"></Picker.Item>
                             <Picker.Item label="3" value="3"></Picker.Item>
                         </Picker>
-                    </View> */}
+
+                    </View>
+
+
+
+
+                    <Text style={[styles.text_footer, {
+                        color: "#213884", borderTopWidth: 1
+                    }]}>Registration Number </Text>
+                    <View style={styles.action}>
+                        <TextInput
+                            placeholder=" Number"
+                            placeholderTextColor="#213884"
+                            style={[styles.textInput, {
+                                color: colors.DarkGray3
+                            }]}
+                            autoCapitalize="none"
+
+                        />
+
+                    </View>
+                    <Text style={[styles.text_footer, {
+                        color: "#213884"
+                    }]}>Current Milage </Text>
+                    <View style={styles.action}>
+                        <TextInput
+                            placeholder=" Milage"
+                            placeholderTextColor="#213884"
+                            style={[styles.textInput, {
+                                color: colors.DarkGray3
+                            }]}
+                            autoCapitalize="none"
+
+                        />
+
+                    </View>
+
                     <View style={styles.button}>
                         <TouchableOpacity
                             style={styles.signIn}
-                            onPress={() => navigation.navigate('CreatePostPrice')}>
+                            onPress={() => navigation.navigate('CreatePostUsed')}
+                        >
                             <LinearGradient
                                 colors={["#213884", "#213884"]}
                                 style={styles.signIn}
@@ -120,19 +160,26 @@ const CreatePost1 = ({ navigation }) => {
                     </View>
                 </View>
             </ImageBackground>
-        </View>
+        </ScrollView>
+
     )
 }
 
 const styles = StyleSheet.create({
-    picker: {
-        // width: 380,
-        //height: 45,
-        borderBottomColor: colors.DarkGray3,
-        borderBottomWidth: 1,
-        color: '#000',
-        borderColor: colors.PrimaryBlue,
-        paddingRight: 20
+    textInput: {
+        flex: 1,
+        marginTop: Platform.OS === 'ios' ? 0 : -12,
+        paddingLeft: 10,
+        color: '#05375a',
+        backgroundColor: 'white',
+        borderBottomWidth: 1
+
+    },
+    dropSownText: {
+        color: colors.PrimaryBlue,
+        fontSize: 18,
+        paddingLeft: 10
+
     },
     signIn: {
         width: '90%',
@@ -148,21 +195,21 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        marginTop: 30,
-
+        marginTop: 30
     },
     text_footer: {
         color: '#05375a',
         fontSize: 18,
-        paddingTop: 10,
-        paddingLeft: 10
+        paddingLeft: 5,
+
     },
     action: {
         flexDirection: 'row',
         marginTop: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#f2f2f2',
-        paddingBottom: 5
+        paddingBottom: 5,
+
     },
     card: {
         shadowColor: '#3D3D3D',
@@ -172,7 +219,8 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 25,
         borderRadius: 10,
-        marginTop: "43%"
+        marginTop: "43%",
+        marginBottom: "10%"
     },
     input: {
         backgroundColor: '#fff',
@@ -204,5 +252,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CreatePost1;
+export default Used;
 

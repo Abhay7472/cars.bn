@@ -119,6 +119,7 @@ const App = () => {
             <Drawer.Screen name="MainTabScreen" component={MainTabScreen} options={{ headerShown: false }} />
             <Drawer.Screen name="DrawerContainerStack" component={DrawerContainerStack} options={{ headerShown: false }} />
 
+
           </Drawer.Navigator>
         )
           :

@@ -163,8 +163,7 @@ const NewCar =()=>{
                     <Text>per month(PCP)</Text>
                     <Image style={styles.calculator} source={images.icon19}/>
 
-                </View>
-
+                </View>  
                 <Text style={styles.bluemedium}>Color</Text>
                 <View style={[styles.row, {justifyContent: 'flex-start'}]}>
                     <CheckBox tintColor="black" value={isSelected1} onValueChange={(newValue) => setSelection1(newValue)} style={styles.checkbox1}/>

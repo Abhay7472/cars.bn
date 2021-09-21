@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
 import {
     Avatar,
     Title,
@@ -13,11 +12,12 @@ import {
     DrawerItem
 } from '@react-navigation/drawer';
 
+import images from '../constants/Images'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { AuthContext } from '../model/context';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { colors } from 'react-native-elements';
-
+ 
 
 export function DrawerContent(props) {
 
@@ -30,12 +30,12 @@ export function DrawerContent(props) {
                     <View style={styles.userInfoSection}>
                         <View style={{ flexDirection: 'row', marginTop: 15 }}>
                             <Avatar.Image
-                                source={{
-                                    uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
-                                }}
+                                source={images.face                                     
+                                    // uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
+                                }
                                 size={50}
                             />
-                            <View style={{ marginLeft: 15, flexDirection: 'column' }}>
+                            <View style={{ marginLeft: 10, flexDirection: 'column' }}>
                                 <Title style={styles.title}>Manish Sharma</Title>
                                 <Caption style={styles.caption}>ManishSharma@gmail.com</Caption>
                             </View>
@@ -78,20 +78,9 @@ export function DrawerContent(props) {
                             )}
                             label="MY post"
                             onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'MyPostDesign' })}
-                        //onPress={() => props.navigation.navigate('', { screen: 'MyPostDesign' })}
+
                         />
 
-                        {/* <DrawerItem
-                            icon={({ color, size }) => (
-                                <Icon
-                                    name="alert-box-outline"
-                                    color={color = "#EA002A"}
-                                    size={size}
-                                />
-                            )}
-                            label="Request Status"
-                            onPress={() => props.navigation.navigate('DrawerContainerStack', { screen: 'RequestStatus' })}
-                        /> */}
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
@@ -184,6 +173,7 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: 14,
         lineHeight: 14,
+        //marginRight:10
     },
     row: {
         marginTop: 20,

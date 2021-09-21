@@ -84,7 +84,7 @@ const HomePage = ({ navigation }) => {
     }
 
     const showAlert = () => {
-        Alert.alert('Welcome', 'please SignIn or Register as CUSTOMER AND DELAR', [
+        Alert.alert('Welcome','Please SignIn to Continue', [
             {
                 text: 'Skip',
                 onPress: () => {

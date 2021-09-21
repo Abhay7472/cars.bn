@@ -3,33 +3,80 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions,
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import DocumentPicker from 'react-native-document-picker'
-
+import ImagePicker from 'react-native-image-crop-picker';
+import Feather from 'react-native-vector-icons/Feather';
+import { Avatar } from 'react-native-elements';
 import colors from '../../constants/Colors';
 import images from '../../constants/Images'
 
 
 const RagistrationDealerScreen = ({ navigation }) => {
 
-    const ComponyDocument = async authProps => {
 
-        try {
-            // const header ={
-            //     Authorization: authProps.idToken 
-            // }
-            const results = await DocumentPicker.pickMultiple({
-                type: [DocumentPicker.types.allFiles],
-            })
-
-            console.log(results[0].uri);
-
-        } catch (err) {
-            if (DocumentPicker.isCancel(err)) {
-                // User cancelled the picker, exit any dialogs or menus and move on
-            } else {
-                throw err
-            }
-        }
+    const [data, setData] = React.useState({
+        username: '',
+        password: '',
+        check_textInputChange: false,
+        secureTextEntry: true,
+        isValidUser: true,
+        isValidPassword: true,
+        //userType : type,
+    });
+    
+    const updateSecureTextEntry = () => {
+        setData({
+            ...data,
+            secureTextEntry: !data.secureTextEntry
+        });
     }
+    const [image, setImage] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRveQdZi9pVUm0br0quUidx2fmdD1Y_KyCWOg&usqp=CAU');
+
+    const chooseFromGallery = () =>{
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+          }).then(image => {
+            setImage(image.path);
+          });
+    }
+    const UploadImage =()=>{
+        return(
+            <View>
+                <TouchableOpacity style={{paddingTop:20,paddingLeft:10}}>
+               <Avatar 
+               name="file-upload" 
+                    onPress={chooseFromGallery}
+                    activeOpacity={0.7}
+                    source={{uri: image}}
+                     size={40}
+                />
+               </TouchableOpacity>
+            </View>
+        )
+    }
+
+
+    // const ComponyDocument = async authProps => {
+
+    //     try {
+    //         // const header ={
+    //         //     Authorization: authProps.idToken 
+    //         // }
+    //         const results = await DocumentPicker.pickMultiple({
+    //             type: [DocumentPicker.types.allFiles],
+    //         })
+
+    //         console.log(results[0].uri);
+
+    //     } catch (err) {
+    //         if (DocumentPicker.isCancel(err)) {
+    //             // User cancelled the picker, exit any dialogs or menus and move on
+    //         } else {
+    //             throw err
+    //         }
+    //     }
+    // }
 
     const Form = () => {
 
@@ -72,13 +119,57 @@ const RagistrationDealerScreen = ({ navigation }) => {
                     </View>
 
                     <View style={[styles.headerWrapper, { marginTop: 5 }]}>
-                        <Text style={{ color: "#213884" }}>  Password </Text>
-                        <TextInput placeholder="Password" style={styles.input}> </TextInput>
-                    </View>
+                    <Text style={{ color: "#213884" }}>  Password </Text>
+                    <TextInput placeholder="Password" secureTextEntry={data.secureTextEntry ? true : false}
+                        style={[styles.input, {
+                            color: colors.DarkGray3
+                        }]}
+                        autoCapitalize="none"> </TextInput>
+                          <TouchableOpacity
+                        onPress={updateSecureTextEntry}
+                        style={{alignSelf:'flex-end',position:'absolute',paddingTop:10}}
+                    >
+                        {data.secureTextEntry ?
+                            <Feather
+                                name="eye-off"
+                                color="grey"
+                                size={20}
+                            />
+                            :
+                            <Feather
+                                name="eye"
+                                color="grey"
+                                size={20}
+                            />
+                        }
+                    </TouchableOpacity>
+                </View>
 
-                    <View style={[styles.headerWrapper, { marginTop: 5 }]}>
-                        <Text style={{ color: "#213884" }}> Confirm Password </Text>
-                        <TextInput placeholder="Confirm Password" style={styles.input}> </TextInput>
+                <View style={[styles.headerWrapper, { marginTop: 5 }]}>
+                    <Text style={{ color: "#213884" }}> Confirm Password </Text>
+                    <TextInput placeholder=" Confirm Password" secureTextEntry={data.secureTextEntry ? true : false}
+                        style={[styles.input, {
+                            color: colors.DarkGray3
+                        }]}
+                        autoCapitalize="none"> </TextInput>
+                             <TouchableOpacity
+                        onPress={updateSecureTextEntry}
+                        style={{alignSelf:'flex-end',position:'absolute',paddingTop:15}}
+                    >
+                        {data.secureTextEntry ?
+                            <Feather
+                                name="eye-off"
+                                color="grey"
+                                size={20}
+                            />
+                            :
+                            <Feather
+                                name="eye"
+                                color="grey"
+                                size={20}
+                            />
+                        }
+                    </TouchableOpacity>
                     </View>
                     <View style={[styles.headerWrapper, { marginTop: 5 }]}>
                         <Text style={{ color: "#213884" }}> Company Name    </Text>
@@ -86,10 +177,16 @@ const RagistrationDealerScreen = ({ navigation }) => {
                     </View>
                     {/* <View style={[styles.headerWrapper, { marginTop: 5 }]}> */}
                     <Text style={{ color: "#213884", paddingTop: 10 }}>  Compony Document</Text>
-                    <TouchableOpacity
-                        onPress={() => ComponyDocument()}  >
-                        <FontAwesome5 name="file-upload" size={30} style={{ paddingTop: 15, paddingLeft: 10 }} />
-                    </TouchableOpacity>
+                    <UploadImage />
+                    {/* <TouchableOpacity
+                         >
+                        <FontAwesome5 name="file-upload" 
+                        rounded
+                        size={30}
+                         onPress={chooseFromGallery}
+                         activeOpacity={0.7}
+                         source={{uri: image}} style={{ paddingTop: 15, paddingLeft: 10 }} />
+                    </TouchableOpacity> */}
 
                     <TouchableOpacity style={styles.btn}
                         onPress={() => navigation.navigate('SignInScreen')}>

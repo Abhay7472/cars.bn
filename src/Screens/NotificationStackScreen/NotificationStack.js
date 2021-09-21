@@ -5,12 +5,13 @@ import Notification from './Notification'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
+import colors from '../../constants/Colors'
 
 
 const NotificationStack = createStackNavigator();
 
-const NotificationStackSrcreen = (props,{route,navigation}) => (
-<NotificationStack.Navigator screenOptions={{
+const NotificationStackSrcreen = (props, { route, navigation }) => (
+    <NotificationStack.Navigator screenOptions={{
         headerStyle: {
             backgroundColor: "white"
         },
@@ -18,6 +19,10 @@ const NotificationStackSrcreen = (props,{route,navigation}) => (
         headerTitleStyle: {
             fontWeight: 'bold',
             color: "black"
+
+        },
+        headerTitleStyle: {
+            color: colors.PrimaryBlue,
 
         },
         headerLeft: () => (
@@ -29,10 +34,10 @@ const NotificationStackSrcreen = (props,{route,navigation}) => (
         )
     }}>
 
-        <NotificationStack.Screen name="Notification" component={Notification} options={{title:'Notification',}} />
+        <NotificationStack.Screen name="Notification" component={Notification} options={{ title: 'Notification', }} />
 
 
-</NotificationStack.Navigator>
+    </NotificationStack.Navigator>
 );
 
-export default NotificationStackSrcreen; 
+export default NotificationStackSrcreen;
